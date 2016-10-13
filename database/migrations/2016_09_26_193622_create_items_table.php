@@ -15,13 +15,13 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
+            $table->boolean('active');
             $table->integer('attachment_id')->unsigned();
             $table->string('title');
             $table->string('description');
             $table->string('longitude');
             $table->string('latitude');
             $table->integer('floor');
-            $table->boolean('active');
             $table->boolean('elevator');
             $table->boolean('air_conditioner');
             $table->boolean('disabled_access');
