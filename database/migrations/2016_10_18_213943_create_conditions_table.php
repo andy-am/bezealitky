@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWindowsTable extends Migration
+class CreateConditionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateWindowsTable extends Migration
      */
     public function up()
     {
-
+        //
     }
 
     /**
@@ -23,6 +23,6 @@ class CreateWindowsTable extends Migration
      */
     public function down()
     {
-        //Schema::drop('windows');
+        //
     }
 }
