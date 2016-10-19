@@ -13,7 +13,14 @@ class CreateConstructionTypesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('construction_types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('slug');
+            $table->text('description');
+            $table->timestamp('deleted_at');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ class CreateConstructionTypesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('construction_types');
     }
 }

@@ -16,7 +16,8 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->increments('creator_id');
-            $table->integer('item_type_id')->unsigned(); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
+            $table->integer('kind_id')->unsigned(); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
+            $table->integer('item_type_id')->unsigned(); //
             $table->integer('window_type_id')->unsigned(); // plastové, francúzske, drevenné, euro
             $table->integer('offer_type_id')->unsigned(); // predaj, kupa, prenajom etc...
             $table->integer('condition_id')->unsigned(); // rozostavané, úplná rekonštrukcia, čiatočná rekonštrukcia, pôvodný stav
@@ -24,8 +25,8 @@ class CreateItemsTable extends Migration
             $table->integer('heating_type_id')->unsigned(); // podlahové, elektrické, plynové etc
             $table->timestamp('availability_from')->nullable();
             $table->float('price');
-            $table->float('deposit');
-            $table->float('commission');
+            $table->float('deposit')->nullable();
+            $table->float('commission')->nullable();
             $table->integer('room');
             $table->string('country');
             $table->string('district');
@@ -35,13 +36,16 @@ class CreateItemsTable extends Migration
             $table->string('city');
             $table->integer('residential_area');
             $table->string('title');
-            $table->string('description');
+            $table->text('description');
             $table->string('longitude');
             $table->string('latitude');
-            $table->integer('floor');
+            $table->integer('floor')->nullable();
             $table->boolean('active')->default(TRUE);
+            $table->boolean('reserve')->default(FALSE);
             $table->boolean('boiler')->default(FALSE);
             $table->boolean('garage')->default(FALSE);
+            $table->boolean('pantry')->default(FALSE);
+            $table->boolean('storage_room')->default(FALSE);
             $table->boolean('elevator')->default(FALSE);
             $table->boolean('air_conditioner')->default(FALSE);
             $table->boolean('disabled_access')->default(FALSE);
@@ -58,6 +62,7 @@ class CreateItemsTable extends Migration
             $table->foreign('condition_id')->references('id')->on('conditions')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('construction_type_id')->references('id')->on('construction_types')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('heating_type_id')->references('id')->on('heating_types')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('kind_id')->references('id')->on('kinds')->onUpdate('cascade')->onDelete('no action');
 
         });
     }
