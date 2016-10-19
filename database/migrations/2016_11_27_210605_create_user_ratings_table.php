@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFavouritesTable extends Migration
+class CreateUserRatingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateFavouritesTable extends Migration
      */
     public function up()
     {
-        Schema::create('items', function (Blueprint $table) {
-            $table->increments('id');
-            $table->increments('user_id');
-            $table->integer('item_id')->unsigned();
+        Schema::create('user_ratings', function (Blueprint $table) {
+            $table->integer('user_id')->unsigned();
+            $table->integer('evaluator_id')->unsigned();
+            $table->integer('rating')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
-            $table->foreign('item_id')->references('id')->on('items')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
         });
     }
 
@@ -30,6 +30,6 @@ class CreateFavouritesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('favourites');
+        Schema::drop('user_ratings');
     }
 }
