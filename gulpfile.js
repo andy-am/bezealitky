@@ -16,4 +16,12 @@ require('laravel-elixir-vue');
 elixir(mix => {
     mix.sass('app.scss')
        .webpack('app.js');
+
+    mix.styles([
+        '../bower_components/bootstrap/dist/css/bootstrap.min.css',
+    ], 'public/assets/css/components.css');
+
+    mix.browserSync({
+        proxy: 'r.dev'
+    });
 });
