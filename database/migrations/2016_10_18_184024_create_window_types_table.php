@@ -17,7 +17,7 @@ class CreateWindowTypesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->string('description');
+            $table->text('description');
             $table->timestamp('deleted_at');
             $table->timestamps();
         });

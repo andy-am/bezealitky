@@ -13,11 +13,11 @@ class CreateItemTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_type', function (Blueprint $table) {
+        Schema::create('item_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->string('description');
+            $table->text('description');
             $table->timestamp('deleted_at');
             $table->timestamps();
 
@@ -31,6 +31,6 @@ class CreateItemTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('item_type');
+        Schema::drop('item_types');
     }
 }

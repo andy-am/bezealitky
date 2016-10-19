@@ -13,7 +13,15 @@ class CreateOfferTypesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('offer_types', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('slug');
+            $table->text('description');
+            $table->timestamp('deleted_at');
+            $table->timestamps();
+
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class CreateOfferTypesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('offer_types');
     }
 }

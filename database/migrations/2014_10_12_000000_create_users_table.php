@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('zip');
             $table->string('city');
             $table->text('note')->nullable();
+            $table->text('about_me')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->string('password');
