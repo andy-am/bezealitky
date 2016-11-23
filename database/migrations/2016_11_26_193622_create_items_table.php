@@ -24,7 +24,7 @@ class CreateItemsTable extends Migration
             $table->integer('construction_type_id')->unsigned(); // tehla, panel, etc.
             $table->integer('heating_type_id')->unsigned(); // podlahové, elektrické, plynové etc
             $table->timestamp('availability_from')->nullable();
-            $table->float('price');
+            $table->float('price')->nullable();
             $table->float('deposit')->nullable();
             $table->float('commission')->nullable();
             $table->integer('room');
