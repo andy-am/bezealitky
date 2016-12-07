@@ -16,7 +16,7 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->increments('creator_id');
-            $table->integer('kind_id')->unsigned(); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
+            $table->integer('item_kind_id')->unsigned(); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
             $table->integer('item_type_id')->unsigned(); //
             $table->integer('window_type_id')->unsigned(); // plastové, francúzske, drevenné, euro
             $table->integer('offer_type_id')->unsigned(); // predaj, kupa, prenajom etc...
@@ -62,7 +62,7 @@ class CreateItemsTable extends Migration
             $table->foreign('condition_id')->references('id')->on('conditions')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('construction_type_id')->references('id')->on('construction_types')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('heating_type_id')->references('id')->on('heating_types')->onUpdate('cascade')->onDelete('no action');
-            $table->foreign('kind_id')->references('id')->on('kinds')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('item_kind_id')->references('id')->on('item_kinds')->onUpdate('cascade')->onDelete('no action');
 
         });
     }

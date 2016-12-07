@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKindsTable extends Migration
+class CreateItemKindsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateKindsTable extends Migration
      */
     public function up()
     {
-        Schema::create('kinds', function (Blueprint $table) {
+        Schema::create('item_kinds', function (Blueprint $table) {
             $table->increments('id');
             $table->increments('item_type_id');
             $table->string('name');
@@ -34,6 +34,6 @@ class CreateKindsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('kinds');
+        Schema::drop('item_kinds');
     }
 }
