@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('post_title')->nullable();
-            $table->string('company')->nullable();
+            $table->string('company_name')->nullable();
             $table->string('country');
             $table->string('street');
             $table->string('street_number');
@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->string('password');
+            $table->integer('active');
             $table->timestamp('deleted_at');
             $table->rememberToken();
 

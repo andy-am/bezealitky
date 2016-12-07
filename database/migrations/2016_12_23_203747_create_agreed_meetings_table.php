@@ -16,13 +16,14 @@ class CreateAgreedMeetingsTable extends Migration
         Schema::create('agreed_meetings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('meeting_id')->unsigned();
-            $table->integer('from_user_id')->unsigned();
-            $table->integer('to_user_id')->unsigned();
+            $table->integer('creator_user_id')->unsigned();
+            $table->integer('caller_user_id')->unsigned();
             $table->boolean('accepted_by_creator')->default(false);
             $table->timestamps();
 
             $table->foreign('meeting_id')->references('id')->on('meetings')->onUpdate('cascade')->onDelete('no action');
-            $table->foreign('item_id')->references('id')->on('items')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('creator_user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('caller_user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
 
         });
     }
