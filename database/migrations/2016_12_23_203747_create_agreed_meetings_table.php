@@ -19,6 +19,7 @@ class CreateAgreedMeetingsTable extends Migration
             $table->integer('creator_user_id')->unsigned();
             $table->integer('caller_user_id')->unsigned();
             $table->boolean('accepted_by_creator')->default(false);
+            $table->timestamp('deleted_at');
             $table->timestamps();
 
             $table->foreign('meeting_id')->references('id')->on('meetings')->onUpdate('cascade')->onDelete('no action');

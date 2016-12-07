@@ -15,11 +15,14 @@ class CreateItemTypesTable extends Migration
     {
         Schema::create('item_types', function (Blueprint $table) { // byt dom
             $table->increments('id');
+            $table->integer('item_kind_id')->unsigned();
             $table->string('name');
             $table->string('slug');
             $table->text('description');
             $table->timestamp('deleted_at');
             $table->timestamps();
+
+            $table->foreign('item_kind_id')->references('id')->on('item_kinds')->onUpdate('cascade')->onDelete('no action');
 
         });
     }

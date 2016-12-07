@@ -53,11 +53,5 @@ class ItemKindSeeder extends Seeder
             'description' => "desc"
         ]);
 
-        DB::table('item_kinds')->insert([
-            'id' => 7,
-            'name' => "Garáž",
-            'slug' => "garaz",
-            'description' => "desc"
-        ]);
     }
 }
