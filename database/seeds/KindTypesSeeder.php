@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class KindSeeder extends Seeder
+class KindTypeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
