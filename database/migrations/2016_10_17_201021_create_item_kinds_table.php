@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemTypesTable extends Migration
+class CreateItemKindsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class CreateItemTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('item_types', function (Blueprint $table) { // byt dom
+        Schema::create('item_kinds', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('item_kind_id')->unsigned();
             $table->string('name');
             $table->string('slug');
             $table->text('description');
             $table->timestamp('deleted_at');
             $table->timestamps();
-
-            $table->foreign('item_kind_id')->references('id')->on('item_kinds')->onUpdate('cascade')->onDelete('no action');
 
         });
     }
@@ -34,6 +31,6 @@ class CreateItemTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('item_types');
+        Schema::drop('item_kinds');
     }
 }
