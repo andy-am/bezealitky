@@ -28,6 +28,8 @@
 </head>
 <body class="@yield('bodyClass')">
 
+@include('partials.header')
+
 @yield('main')
 <!-- Scripts -->
 <script src="/js/app.js"></script>
