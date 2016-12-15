@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConditionsTable extends Migration
+class CreateThingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateConditionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('conditions', function (Blueprint $table) {
+        Schema::create('things', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
             $table->text('description');
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(TRUE);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ class CreateConditionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('conditions');
+        Schema::drop('things');
     }
 }

@@ -30,8 +30,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('phone')->unique();
             $table->string('password');
-            $table->integer('active');
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(FALSE);
+            $table->softDeletes();
             $table->rememberToken();
 
             $table->timestamps();

@@ -18,7 +18,8 @@ class CreateOfferTypesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description');
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(TRUE);
+            $table->softDeletes();
             $table->timestamps();
 
         });

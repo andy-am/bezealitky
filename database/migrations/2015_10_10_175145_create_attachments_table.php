@@ -16,10 +16,10 @@ class CreateAttachmentsTable extends Migration
         Schema::create('attachments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('codename');
+            $table->string('slug');
             $table->string('url');
-            $table->boolean('active');
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(TRUE);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

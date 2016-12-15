@@ -17,21 +17,27 @@ class ConstructionTypeSeeder extends Seeder
             'description' => "desc"
         ]);
 
-        DB::table('heating_types')->insert([
+        DB::table('construction_types')->insert([
             'name' => "Kváder",
             'slug' => "kvader",
             'description' => "desc"
         ]);
 
-        DB::table('heating_types')->insert([
+        DB::table('construction_types')->insert([
             'name' => "Panel",
             'slug' => "panel",
             'description' => "desc"
         ]);
 
-        DB::table('heating_types')->insert([
+        DB::table('construction_types')->insert([
             'name' => "Drevo",
             'slug' => "drevo",
+            'description' => "desc"
+        ]);
+
+        DB::table('construction_types')->insert([
+            'name' => "Iné",
+            'slug' => "ine",
             'description' => "desc"
         ]);
 

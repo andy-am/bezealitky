@@ -19,7 +19,8 @@ class CreateItemTypesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->text('description');
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(TRUE);
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('item_kind_id')->references('id')->on('item_kinds')->onUpdate('cascade')->onDelete('no action');

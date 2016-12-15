@@ -14,11 +14,14 @@ class CrateAccountTypesTable extends Migration
     public function up()
     {
         Schema::create('account_types', function (Blueprint $table) {
+
+            //TODO
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
             $table->text('description')->nullable();
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(FALSE);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

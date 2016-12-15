@@ -19,7 +19,7 @@ class CreateUserRatingsTable extends Migration
             $table->integer('rating')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('evaluator_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
         });
     }
 

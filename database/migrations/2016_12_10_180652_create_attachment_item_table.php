@@ -14,11 +14,17 @@ class CreateAttachmentItemTable extends Migration
     public function up()
     {
         Schema::create('attachment_item', function (Blueprint $table) {
-            $table->integer('attachment_id')->unsigned();
+            $table->increments('id');
+            $table->string('name');
+            $table->string('slug');
+            $table->string('url');
             $table->integer('item_id')->unsigned();
-            $table->boolean('main')->defaul(false);
+            $table->boolean('main')->defaul(FALSE);
+            $table->boolean('active')->default(TRUE);
+            $table->softDeletes();
+            $table->timestamps();
 
-            $table->foreign('attachment_id')->references('id')->on('attachments')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id')->references('id')->on('attachments')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('item_id')->references('id')->on('items')->onUpdate('cascade')->onDelete('cascade');
         });
     }

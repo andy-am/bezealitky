@@ -19,7 +19,8 @@ class CreateMeetingsTable extends Migration
             $table->integer('item_id')->unsigned();
             $table->timestamp('meeting_datetime');
             $table->boolean('reserved')->default(false);
-            $table->timestamp('deleted_at');
+            $table->boolean('active')->default(TRUE);
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('creator_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
