@@ -13,7 +13,7 @@
                         <div class="col-md-10 col-md-offset-1">
                             <div class="jumbotron">
                                 <h1 style="font-size: 26px">
-                                    Nehnuteľnosť Rodinný dom Predaj Dunajská Streda
+                                    {{ $flat->title }} | {{ $flat->itemKind->name }} | {{ $flat->itemType->name }} | {{--Nehnuteľnosť Rodinný dom Predaj Dunajská Streda--}}
                                 </h1>
                                 <p>
                                     Predaj: exkluzívny rodinný dom, kompletne zariadený, bazén so slanou vodou,priamo v Dunajskej Strede
@@ -34,6 +34,7 @@
                                         <i class="fa fa-futbol-o" aria-hidden="true"></i>
                                         <i class="fa fa-shopping-bag" aria-hidden="true"></i>
                                     </div>
+
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -42,20 +43,20 @@
                                     <div class="col-md-6">
                                         <table class="table table-striped">
                                             <tr>
-                                                <th>Druh / Typ</th>
-                                                <td>Rodinný dom / Predaj</td>
+                                                <th>Druh / Typ / Typ Ponuky</th>
+                                                <td>{{ $flat->itemKind->name }} / {{ $flat->itemType->name }} / {{ $flat->itemOffer->name }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Ulica</th>
-                                                <td>Špitálska 20</td>
+                                                <td>{{ $flat->street }} {{ $flat->street_number }}</td>
                                             </tr>
                                             <tr>
                                                 <th>Mesto</th>
-                                                <td>Bratislava</td>
+                                                <td>{{ $flat->city}}</td>
                                             </tr>
                                             <tr>
                                                 <th>Celková úžitková plocha</th>
-                                                <td>160,00 m<sup>2</sup></td>
+                                                <td>{{ $flat->residential_area }} m<sup>2</sup></td>
                                             </tr>
                                             <tr>
                                                 <th>Cena</th>
@@ -95,24 +96,24 @@
 
                                 <table class="table table-striped">
                                     <tr>
-                                        <th class="col-md-4">Druh / Typ</th>
-                                        <td>Rodinný dom / Predaj</td>
+                                        <th class="col-md-4">Druh / Typ / Typ Ponuky</th>
+                                        <td>{{ $flat->itemKind->name }} / {{ $flat->itemType->name }} / {{ $flat->itemOffer->name }}</td>
                                     </tr>
                                     <tr>
                                         <th>Ulica</th>
-                                        <td>Špitálska 20</td>
+                                        <td>{{ $flat->street . " " . $flat->street_number  }}</td>
                                     </tr>
                                     <tr>
                                         <th>Mesto</th>
-                                        <td>Bratislava</td>
+                                        <td>{{ $flat->city }}</td>
                                     </tr>
                                     <tr>
                                         <th>Celková úžitková plocha</th>
-                                        <td>160,00 m<sup>2</sup></td>
+                                        <td>{{ $flat->residential_area }} m<sup>2</sup></td>
                                     </tr>
                                     <tr>
                                         <th>Cena</th>
-                                        <td>239 990 €</td>
+                                        <td>{{ number_format($flat->price, 2, "."," ") }} &euro; | {{ number_format($flat->price * 30.126, 2, "."," ") }} sk </td>
                                     </tr>
                                 </table>
 

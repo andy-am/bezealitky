@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/index', 'TemplateController@index');
 Route::get('/signup', 'TemplateController@signUp');
-Route::get('/flat-detail/{id}', 'FlatController@show');
+Route::get('/flat-detail/{id}', 'ItemController@detail');

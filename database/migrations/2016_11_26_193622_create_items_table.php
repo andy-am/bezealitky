@@ -19,7 +19,7 @@ class CreateItemsTable extends Migration
             $table->integer('item_kind_id')->unsigned(); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
             $table->integer('item_type_id')->unsigned(); //
             $table->integer('window_type_id')->unsigned(); // plastové, francúzske, drevenné, euro
-            $table->integer('offer_type_id')->unsigned(); // predaj, kupa, prenajom etc...
+            $table->integer('item_offer_id')->unsigned(); // predaj, kupa, prenajom etc...
             $table->integer('thing_id')->unsigned(); // rozostavané, úplná rekonštrukcia, čiatočná rekonštrukcia, pôvodný stav
             $table->integer('construction_type_id')->unsigned(); // tehla, panel, etc.
             $table->integer('heating_type_id')->unsigned(); // podlahové, elektrické, plynové etc
@@ -56,7 +56,7 @@ class CreateItemsTable extends Migration
             $table->timestamps();
 
             $table->foreign('creator_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');
-            $table->foreign('offer_type_id')->references('id')->on('offer_types')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('item_offer_id')->references('id')->on('item_offers')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('item_kind_id')->references('id')->on('item_kinds')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('item_type_id')->references('id')->on('item_types')->onUpdate('cascade')->onDelete('no action');
             $table->foreign('window_type_id')->references('id')->on('window_types')->onUpdate('cascade')->onDelete('no action');

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOfferTypesTable extends Migration
+class CreateItemOffersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOfferTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('offer_types', function (Blueprint $table) {
+        Schema::create('item_offers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
@@ -32,6 +32,6 @@ class CreateOfferTypesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('offer_types');
+        Schema::drop('item_offers');
     }
 }

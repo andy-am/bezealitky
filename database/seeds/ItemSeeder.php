@@ -18,7 +18,7 @@ class ItemSeeder extends Seeder
             'item_kind_id' => 1,
             'item_type_id' => 1,
             'window_type_id' => 1,
-            'offer_type_id' => 1,
+            'item_offer_id' => 1,
             'thing_id' => 1,
             'construction_type_id' => 1,
             'heating_type_id' => 1,
