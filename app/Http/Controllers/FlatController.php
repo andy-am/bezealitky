@@ -11,6 +11,8 @@ class FlatController extends Controller
      */
     public function show()
     {
-        return view('template.flat-show');
+        $id=1;
+
+        return view('flat.show');
     }
 }
