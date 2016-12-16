@@ -60,7 +60,7 @@
                                             </tr>
                                             <tr>
                                                 <th>Cena</th>
-                                                <td><span style="font-size: 26px">239 990 €</span></td>
+                                                <td><span style="font-size: 26px">{{ number_format($flat->price, 2, "."," ") }} &euro; | {{ number_format($flat->price * 30.126, 2, "."," ") }} sk </span></td>
                                             </tr>
                                         </table>
 
