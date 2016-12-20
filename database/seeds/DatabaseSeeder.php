@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(ThingSeeder::class);
+        $this->call(AccountSeeder::class);
         $this->call(ConstructionTypeSeeder::class);
         $this->call(WindowTypeSeeder::class);
         $this->call(HeatingTypeSeeder::class);

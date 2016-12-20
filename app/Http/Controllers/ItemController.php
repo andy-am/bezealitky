@@ -14,6 +14,8 @@ class ItemController extends Controller
     {
         $flat = Item::find($id);
 
+        dd($flat);
+
         return view('item.detail',['flat' => $flat]);
     }
 }
