@@ -11,14 +11,14 @@ class Item extends Model
     ];
 
     public function itemKind(){
-        return $this->hasOne('App\ItemKind','id');
+        return $this->belongsTo('App\ItemKind');
     }
 
     public function itemType(){
-        return $this->hasOne('App\ItemType','id');
+        return $this->belongsTo('App\ItemType');
     }
 
     public function itemOffer(){
-        return $this->hasOne('App\ItemOffer','id');
+        return $this->belongsTo('App\ItemOffer');
     }
 }

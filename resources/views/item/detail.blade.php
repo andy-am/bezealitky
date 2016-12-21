@@ -66,10 +66,11 @@
 
                                         <div class="btn-group btn-group-md pull-left" style="margin-right: 15px">
 
-                                            <button type="button" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-share" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.gallery")" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.neviem")" class="btn btn-default"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.print")" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.environment")" class="btn btn-default"><i class="fa fa-leaf" aria-hidden="true"></i></button>
+                                            <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.share")" class="btn btn-default"><i class="fa fa-share" aria-hidden="true"></i></button>
                                         </div>
 
                                         <div>
@@ -77,8 +78,8 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
+
                             <div>
 
                                 <div style="margin-bottom: 25px">
@@ -130,10 +131,9 @@
                             <div style="margin-top: 35px; margin-bottom: 45px">
                                 <div id="map" style="width: 100%; height: 50vh; background-color: grey;"></div>
                             </div>
-
                         </div>
                     </div>
-            </div>
+            </main>
         </div>
     </div>
     </div>

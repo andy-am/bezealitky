@@ -178,6 +178,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // ADDITIONAL PACKAGES
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
+        JildertMiedema\LaravelPlupload\LaravelPluploadServiceProvider::class,
+
     ],
 
     /*
@@ -225,6 +230,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        'Plupload' => JildertMiedema\LaravelPlupload\Facades\Plupload::class,
 
     ],
 

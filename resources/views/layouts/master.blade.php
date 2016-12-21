@@ -12,18 +12,21 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
-                'csrfToken' => csrf_token(),
-        ]); ?>
+        window.Laravel =
+        <?php echo json_encode([
+                       'csrfToken' => csrf_token(),
+               ]); ?>
     </script>
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 
     <!-- Bootstrap and other components -->
     <link href="{{asset('/assets/css/app.css')}}" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
 <body class="@yield('bodyClass')">
@@ -34,9 +37,15 @@
 <!-- Scripts -->
 <script src="/js/app.js"></script>
 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="/js/bootstrap/bootstrap.min.js"></script>
 </body>
 </html>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
