@@ -167,17 +167,17 @@
                                                         <div id="panel-element-379909" class="panel-collapse collapse in">
                                                             <div class="panel-body text-center">
                                                                 <div class="text-center" style="display: inline-block; margin: 0 10px">
-                                                                    <img style="width: 48px; height: 48px" class="img-circle" src="http://img1.closermag.fr/var/closermag/storage/images/media/images-des-contenus/teen/articles/2014-12-08-justin-bieber-c-est-quoi-cette-couleur-de-cheveux/justin-bieber-voulait-il-ressembler-a-son-idole-eminem/3958732-1-fre-FR/Justin-Bieber-voulait-il-ressembler-a-son-idole-Eminem_square500x500.jpg">
+                                                                    <img style="width: 60px; height: 60px" class="img-circle" src="http://img1.closermag.fr/var/closermag/storage/images/media/images-des-contenus/teen/articles/2014-12-08-justin-bieber-c-est-quoi-cette-couleur-de-cheveux/justin-bieber-voulait-il-ressembler-a-son-idole-eminem/3958732-1-fre-FR/Justin-Bieber-voulait-il-ressembler-a-son-idole-Eminem_square500x500.jpg">
                                                                     <h6 class="text-center">Martinko<br>Klingacik</h6>
                                                                 </div>
 
                                                                 <div class="text-center" style="display: inline-block; margin: 0 10px">
-                                                                    <img style="width: 48px; height: 48px" class="img-circle" src="https://pbs.twimg.com/profile_images/536279638155075584/SJhCLck2.jpeg">
+                                                                    <img style="width: 60px; height: 60px" class="img-circle" src="https://pbs.twimg.com/profile_images/536279638155075584/SJhCLck2.jpeg">
                                                                     <h6 class="text-center">Julia<br>Vlastofkova</h6>
                                                                 </div>
 
                                                                 <div class="text-center" style="display: inline-block; margin: 0 10px">
-                                                                    <img style="width: 48px; height: 48px" class="img-circle" src="https://pbs.twimg.com/profile_images/554726386946953216/eadJzgEO.jpeg">
+                                                                    <img style="width: 60px; height: 60px" class="img-circle" src="https://pbs.twimg.com/profile_images/554726386946953216/eadJzgEO.jpeg">
                                                                     <h6 class="text-center">Bi<br>Ajdzi</h6>
                                                                 </div>
                                                             </div>

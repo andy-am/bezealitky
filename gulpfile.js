@@ -23,7 +23,18 @@ elixir(mix => {
         '../bower_components/bootstrap/dist/css/bootstrap.min.css',
     ], 'public/assets/css/components.css');
 */
+/*
+    mix.webpack(
+        './resources/assets/js/app.js',
+        './public/dist'
+    );
+*/
     mix.browserSync({
         proxy: 'r.dev'
     });
+});
+
+elixir(function(mix) {
+    mix.webpack('app.js');
+    mix.webpack('form.js');
 });
