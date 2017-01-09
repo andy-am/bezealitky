@@ -2,128 +2,133 @@
  * Ajax form based on Bootstrap 3 & Laravel 5
  * 2017 by Michal Gasparik
  */
-
 (function($){
 
-    // form element
-    var $form = $('form.ajax');
+    $(function(){
 
-    // form method
-    var method = $form.attr('method');
+        // form element
+        var $form = $('form.ajax');
 
-    // form action
-    var action = $form.attr('action');
+        // form method
+        var method = $form.attr('method');
 
-    // form logic
-    var form = {
+        // form action
+        var action = $form.attr('action');
 
-        // config
-        config : {
-            grecaptcha : true
-        },
+        // form logic
+        var form = {
 
-        /**
-         * Submit method
-         *
-         * @param e
-         * @param self
-         * @private
-         */
-        _submit: function (e, self) {
+            // config
+            config : {
+                grecaptcha : true
+            },
 
-            e.preventDefault();
-            console.log('Im submited form, yeah!');
+            /**
+             * Submit method
+             *
+             * @param e
+             * @param self
+             * @private
+             */
+            _submit: function (e, self) {
 
-            // form serialized data
-            var data = $form.serialize();
+                e.preventDefault();
+                console.log('Im submited form, yeah!');
 
-            console.log(data);
+                // form serialized data
+                var data = $form.serialize();
 
-            // form ajax options
-            var options = {
-                method: method,
-                url: action,
-                data: data,
-                dataType: 'json'
-            };
+                console.log(data);
 
-            $.ajax(options).done(function (response) {
+                // form ajax options
+                var options = {
+                    method: method,
+                    url: action,
+                    data: data,
+                    dataType: 'json'
+                };
 
-                console.log(response);
-                form._validate(self, response)
+                $.ajax(options).done(function (response) {
 
-            }).fail(function (response) {
+                    console.log('done');
+                    console.log(response);
+                    form._validate(self, response)
 
-                console.log(response);
-                form._validate(self, response)
+                }).fail(function (response) {
 
-            });
-
-        },
-
-        /**
-         * Validate method
-         *
-         * @param $form
-         * @param response
-         * @private
-         */
-
-        _validate: function ($form, response) {
-
-            var status = response.status;
-            var $group = $('.form-group');
-
-            console.log(status);
-            console.log(response);
-
-            if(status == 422){
-
-                var messages = JSON.parse(response.responseText);
-
-                // reset validate messages
-                $group.removeClass('has-error');
-                $form.find('.help-block').remove();
-
-                // fill validate messages
-                $.each(messages, function (index, value) {
-
-                    var index = index.replace(/\./g, '_'),
-                        $group = $form.find('*[name="' + index + '"]').closest('.form-group');
-
-                    $group.addClass('has-error').prepend('<div class="help-block">'+ value +'</div>');
-
-                    console.log(index);
-                    console.log(value);
+                    console.log('fail');
+                    console.log(response);
+                    form._validate(self, response)
 
                 });
 
+            },
 
-            } else if(status == 200){
+            /**
+             * Validate method
+             *
+             * @param $form
+             * @param response
+             * @private
+             */
 
-                form._reset();
-                $('#success-notification').addClass('show-up');
+            _validate: function ($form, response) {
 
+                var status = response.status;
+                var $group = $('.form-group');
+
+                console.log(status);
+                console.log(response);
+
+                if(status == 422){
+
+                    var messages = JSON.parse(response.responseText);
+
+                    // reset validate messages
+                    $group.removeClass('has-error');
+                    $form.find('.help-block').remove();
+
+                    // fill validate messages
+                    $.each(messages, function (index, value) {
+
+                        var index = index.replace(/\./g, '_'),
+                            $group = $form.find('*[name="' + index + '"]').closest('.form-group');
+
+                        $group.addClass('has-error').prepend('<div class="help-block">'+ value +'</div>');
+
+                        console.log(index);
+                        console.log(value);
+
+                    });
+
+
+                } else if(status == 200){
+
+                    form._reset();
+                    $('#success-notification').addClass('show-up');
+
+                }
+
+            },
+
+            _reset : function(){
+                if(form.config.grecaptcha){
+                    grecaptcha.reset();
+                }
+
+                $form.find('.help-block').remove();
+                $form[0].reset();
             }
+        };
 
-        },
+        /**
+         * Bind on form submit
+         */
 
-        _reset : function(){
-            if(form.config.grecaptcha){
-                grecaptcha.reset();
-            }
+        $(document).on('submit', $form, function (e){
+            form._submit(e, $(this));
+        });
 
-            $form.find('.help-block').remove();
-            $form[0].reset();
-        }
-    };
-
-    /**
-     * Bind on form submit
-     */
-
-    $(document).on('submit', $form, function (e){
-        form._submit(e, $(this));
     });
 
-})(jQuery)
+})(jQuery);
