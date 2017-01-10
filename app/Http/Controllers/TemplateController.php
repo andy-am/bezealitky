@@ -18,4 +18,9 @@ class TemplateController extends Controller
     {
         return view('template.signup');
     }
+
+    public function profile()
+    {
+        return view('template.profile');
+    }
 }

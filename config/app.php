@@ -182,6 +182,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\Snappy\ServiceProvider::class,
         JildertMiedema\LaravelPlupload\LaravelPluploadServiceProvider::class,
+        //Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
     ],
 
@@ -234,6 +235,7 @@ return [
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'SnappyImage' => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Plupload' => JildertMiedema\LaravelPlupload\Facades\Plupload::class,
+        //'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
 
     ],
 
