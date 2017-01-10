@@ -2,7 +2,78 @@
 
 @section('title', 'Sign Up')
 @section('bodyClass', 'signup')
+    <script>
+        var infowindow;
 
+        function initMap() {
+            var radius = 50;
+            var my_place = {lat: 48.554014, lng: 18.174338};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 17,
+                center: my_place
+            });
+            var marker = new google.maps.Marker({
+                position: my_place,
+                map: map
+            });
+            var circle = new google.maps.Circle({
+                map: map,
+                radius: radius,    // 10 miles in metres
+                fillColor: '#AA0000'
+            });
+            var request = {
+                location : my_place,
+                radius : radius,
+                type : [ 'bank' ]
+            };
+
+            var populationOptions = {
+                strokeColor: "#FF0000",
+                strokeOpacity: 1,
+                strokeWeight: 1,
+                clickable: true,
+                fillOpacity: 0,
+                map: map,
+                center: my_place,
+                radius: 20
+            };
+            cityCircle = new google.maps.Circle(populationOptions);
+            google.maps.event.addListener(cityCircle, 'click', function(ev) {
+                infoWindow.setPosition(ev.latLng);
+                infoWindow.open(map);
+            });
+
+            var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch(request, callback);
+
+            //circle.bindTo('center', marker, 'position');
+        }
+        function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                }
+            }
+        }
+
+        function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+                map : map,
+                position : place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(place.name);
+                infowindow.open(map, this);
+            });
+        }
+
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpGNygl1bhboNRXZE6D6b32P_EiN5-rUs&libraries=places&callback=initMap"
+            async defer>
+    </script>
 
 @section('main')
     <div class="container-fluid">
@@ -169,5 +240,8 @@
 
 
 @section('scripts')
+
+
+
 
 @endsection

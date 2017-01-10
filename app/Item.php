@@ -18,7 +18,25 @@ class Item extends Model
         return $this->belongsTo('App\ItemType');
     }
 
+    public function itemWindow(){
+        return $this->belongsTo('App\ItemWindow');
+    }
+
     public function itemOffer(){
         return $this->belongsTo('App\ItemOffer');
     }
+
+    public function itemThing(){
+        return $this->belongsTo('App\ItemThing');
+    }
+
+    public function itemConstruction(){
+        return $this->belongsTo('App\ItemConstruction');
+    }
+
+    public function itemHeating(){
+        return $this->belongsTo('App\ConstructionType');
+    }
+
+
 }

@@ -27,7 +27,7 @@ class CreateItemsTable extends Migration
             $table->float('price')->nullable();
             $table->float('deposit')->nullable();
             $table->float('commission')->nullable();
-            $table->integer('room');
+            $table->integer('room')->nullable();
             $table->string('country');
             $table->string('county');
             $table->string('district');
@@ -35,11 +35,11 @@ class CreateItemsTable extends Migration
             $table->string('street_number');
             $table->string('zip');
             $table->string('city');
-            $table->integer('residential_area');
+            $table->integer('residential_area')->nullable();
             $table->string('title');
-            $table->text('description');
-            $table->string('longitude');
-            $table->string('latitude');
+            $table->text('description')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->integer('floor')->nullable();
             $table->boolean('active')->default(TRUE);
             $table->boolean('reserve')->default(FALSE);
