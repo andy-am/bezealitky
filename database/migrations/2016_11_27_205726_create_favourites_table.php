@@ -14,7 +14,7 @@ class CreateFavouritesTable extends Migration
     public function up()
     {
         Schema::create('favourites', function (Blueprint $table) {
-            $table->increments('user_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('item_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('no action');

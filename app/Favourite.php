@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Favourite extends Authenticatable
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'user_id', 'item_id'
     ];
 
     /**
@@ -24,15 +24,13 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+
     ];
 
-    public function favourites(){
-        return $this->belongsToMany('App\Item', 'favourites');
-    }
-
-    public function myOffers(){
-        return $this->hasMany('App\Item', 'creator_id');
+    public function users(){
+        /*$user =  User::find(Auth::user()->id);
+        return view('user.favourites',['products' => $user->favourites ]);
+        return $this->belongsToMany('App\Favouri', 'favourites');*/
     }
 
 }
