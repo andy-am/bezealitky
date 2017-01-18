@@ -23,41 +23,28 @@
                                                     My Offers
                                                 </h4>
                                                 <div class="panel-group" id="panel-521981">
-                                                    @foreach($user->myOffers as $offer)
+                                                    @foreach($user->myOffers as $index => $offer)
                                                         <div class="panel panel-default">
                                                             <div id="panel-element-379909" class="panel-collapse collapse in">
                                                                 <div class="panel-body">
                                                                     <div class="row">
                                                                         <div class="col-md-6">
-                                                                            <img style="width: 100%" src="/images/dummy/01-full.png">
+                                                                            @if($index % 2)
+                                                                                <img style="width: 100%" src="/images/dummy/01-full.png">
+                                                                            @else
+                                                                                <img style="width: 100%" src="/images/dummy/02-thumb.png">
+                                                                            @endif
                                                                         </div>
                                                                         <div class="col-md-6">
                                                                             <h4 style="margin:0"><a style="color:#636b6f" href="#">Nehnuteľnosť Rodinný dom Predaj Dunajská Streda</a></h4>
                                                                             <div>Predaj: exkluzívny rodinný dom, kompletne zariadený, bazén so slanou vodou</div>
-                                                                            <div><strong>239 990 €</strong></div>
+                                                                            <div><strong>{{ number_format($offer->price, 2, "."," ") }} &euro; | {{ number_format($offer->price * 30.126, 2, "."," ") }} sk </strong></div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     @endforeach
-                                                    <div class="panel panel-default">
-                                                        <div id="panel-element-379909" class="panel-collapse collapse in">
-                                                            <div class="panel-body">
-                                                                <div class="row">
-                                                                    <div class="col-md-6">
-                                                                        <img style="width: 100%" src="/images/dummy/02-thumb.png">
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <h4 style="margin:0"><a style="color:#636b6f" href="#">Predáme 3 izbový byt v Žiline - Vlčince II</a></h4>
-                                                                        <div>Ponúkame Vám na predaj 3 izbový byt vo vyhľadávanej lokalite Žiliny</div>
-                                                                        <div><strong>239 990 €</strong></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
                                                 </div>
                                             </div>
 
@@ -67,13 +54,17 @@
                                                     My Favourites
                                                 </h4>
                                                 <div class="panel-group" id="panel-521981">
-                                                    @foreach($user->favourites as $favourite)
+                                                    @foreach($user->favourites as $index => $favourite)
                                                         <div class="panel panel-default">
                                                             <div id="panel-element-379909" class="panel-collapse collapse in">
                                                                 <div class="panel-body">
                                                                     <div class="row">
                                                                         <div class="col-md-4">
-                                                                            <img style="width: 100%" src="/images/dummy/03-thumb.png">
+                                                                            @if($index % 2)
+                                                                                <img style="width: 100%" src="/images/dummy/03-thumb.png">
+                                                                            @else
+                                                                                <img style="width: 100%" src="/images/dummy/04-thumb.png">
+                                                                            @endif
                                                                         </div>
                                                                         <div class="col-md-8">
                                                                             <h4 style="margin:0"><a style="color:#636b6f" href="{{ url("/flat-detail/{id}") }}">Nehnuteľnosť Rodinný dom Predaj Dunajská Streda</a></h4>
