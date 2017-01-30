@@ -36,7 +36,7 @@
                                                                             @endif
                                                                         </div>
                                                                         <div class="col-md-6">
-                                                                            <h4 style="margin:0"><a style="color:#636b6f" href="#">Nehnuteľnosť Rodinný dom Predaj Dunajská Streda</a></h4>
+                                                                            <h4 style="margin:0"><a style="color:#636b6f" href="{{ url("/flat-detail", ["id" => $offer->id]) }}">Nehnuteľnosť Rodinný dom Predaj Dunajská Streda</a></h4>
                                                                             <div>Predaj: exkluzívny rodinný dom, kompletne zariadený, bazén so slanou vodou</div>
                                                                             <div><strong>{{ number_format($offer->price, 2, "."," ") }} &euro; | {{ number_format($offer->price * 30.126, 2, "."," ") }} sk </strong></div>
                                                                         </div>
