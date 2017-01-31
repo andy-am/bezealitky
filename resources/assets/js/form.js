@@ -20,7 +20,7 @@
 
             // config
             config : {
-                grecaptcha : true
+                grecaptcha : false
             },
 
             /**
