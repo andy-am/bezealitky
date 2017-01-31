@@ -23,4 +23,9 @@ class TemplateController extends Controller
     {
         return view('template.profile');
     }
+
+    public function flatAdd()
+    {
+        return view('template.flat-add');
+    }
 }
