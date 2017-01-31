@@ -228,50 +228,50 @@
                                                             <label class="col-md-4 control-label" for="checkboxes">Choose</label>
                                                             <div class="col-md-4">
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-0">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                                                                    <label for="boiler">
+                                                                        <input type="checkbox" name="checkboxes" id="boiler" value="1">
                                                                         boiler
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                    <label for="garage">
+                                                                        <input type="checkbox" name="checkboxes" id="garage" value="2">
                                                                         garage
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                    <label for="pantry">
+                                                                        <input type="checkbox" name="checkboxes" id="pantry" value="3">
                                                                         pantry
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                    <label for="storage">
+                                                                        <input type="checkbox" name="checkboxes" id="storage" value="4">
                                                                         storage room
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                    <label for="elevator">
+                                                                        <input type="checkbox" name="checkboxes" id="elevator" value="5">
                                                                         elevator
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
                                                                     <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="6">
                                                                         air conditioner
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                    <label for="access">
+                                                                        <input type="checkbox" name="checkboxes" id="access" value="7">
                                                                         disabled access
                                                                     </label>
                                                                 </div>
                                                                 <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
+                                                                    <label for="cellar">
+                                                                        <input type="checkbox" name="checkboxes" id="cellar" value="8">
                                                                         cellar
                                                                     </label>
                                                                 </div>
