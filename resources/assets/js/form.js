@@ -15,6 +15,9 @@
         // form action
         var action = $form.attr('action');
 
+        // token
+        var token = $('meta[name="csrf-token"]').attr('content');
+
         // form logic
         var form = {
 
@@ -36,7 +39,7 @@
                 console.log('Im submited form, yeah!');
 
                 // form serialized data
-                var data = $form.serialize();
+                var data = $form.serialize() + '&_token=' + token;
 
                 console.log(data);
 
