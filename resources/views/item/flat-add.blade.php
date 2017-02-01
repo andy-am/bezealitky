@@ -285,7 +285,7 @@
                                                 <div class="col-md-4">
                                                     <div class="form-group">
                                                         <label>&nbsp;</label>
-                                                            <select class="form-control" id="city" name="city">
+                                                        <select class="form-control" id="city" name="city">
                                                             <option value="0">&euro;</option>
                                                             <option value="0">&euro;/m<sup>2</sup></option>
                                                         </select>
@@ -294,7 +294,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                                <label for="deposit">Deposit <span class="text-danger">*</span></label> <input class="form-control" id="deposit" name="deposit" type="text">
+                                            <label for="deposit">Deposit <span class="text-danger">*</span></label> <input class="form-control" id="deposit" name="deposit" type="text">
                                         </div>
                                         <div class="col-md-4">
 

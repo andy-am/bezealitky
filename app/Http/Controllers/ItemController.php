@@ -19,4 +19,20 @@ class ItemController extends Controller
 
         return view('item.detail', ['flat' => $flat]);
     }
+
+    public function create()
+    {
+
+        return view('item.flat-add' );
+    }
+
+    public function store(Request $request)
+    {
+
+
+        dump($request->all());
+        die();
+
+        return response()->json(["json som "]);
+    }
 }
