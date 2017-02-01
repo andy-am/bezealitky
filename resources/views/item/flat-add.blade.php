@@ -23,7 +23,7 @@
                                 <div class="tab-content">
                                     <div class="tab-pane active" id="panel-19538">
                                         <div style="padding:30px">
-                                            <form role="form" class="ajax" method="post" action="/add-flat/add">
+                                            <form role="form" class="ajax" method="post" action="/flat-add">
                                                 <div class="row">
                                                     <div class="col-md-6">
 
