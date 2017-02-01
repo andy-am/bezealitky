@@ -12,385 +12,363 @@
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
                             <div class="jumbotron">
-                                <h2>
-                                    Add Flat
-                                </h2>
-                                <p>
-                                    This is a template for a simple marketing or informational website.
-                                </p>
+                                <h2>Add Flat</h2>
+                                <p>This is a template for a simple marketing or informational website.</p>
                             </div>
-                            <div class="tabbable" id="tabs-800828">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" id="panel-19538">
-                                        <div style="padding:30px">
-                                            <form role="form" class="ajax" method="post" action="/add-flat/add">
-                                                <div class="row">
-                                                    <div class="col-md-6">
 
-                                                        <div class="form-group">
-                                                            <label for="title">
-                                                                Title <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="title" />
-                                                        </div>
+                            <div style="padding:30px">
+                                <form action="/add-flat/add" class="ajax" method="post" role="form">
+                                    <div class="page-header text-center" style="margin: 0 0 20px">
+                                        <h2>Basics</h2>
+                                    </div>
 
-                                                        <div class="form-group">
-                                                            <label for="description">
-                                                                Description <span class="text-danger">*</span>
-                                                            </label>
-                                                            <textarea class="form-control" id="description" rows="5" name="textarea">default text</textarea>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Offer type <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="selectbasicddd" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                                <option value="1">Predaj</option>
-                                                                <option value="2">Kupa</option>
-                                                                <option value="3">Prenajom</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Kind <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="selectbasicddd" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                                <option value="1">Dom</option>
-                                                                <option value="2">Byt</option>
-                                                                <option value="3">Priestor</option>
-                                                                <option value="4">Objekt</option>
-                                                                <option value="5">Rekreačný dom</option>
-                                                                <option value="6">Pozemok</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Window type <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="selectbasicddd" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                                <option value="1">plastové</option>
-                                                                <option value="2">francúzske</option>
-                                                                <option value="3">drevenné</option>
-                                                                <option value="4">euro</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Thig type <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="selectbasicddd" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                                <option value="1">rozostavané</option>
-                                                                <option value="2">úplná rekonštrukcia</option>
-                                                                <option value="3">čiatočná rekonštrukcia</option>
-                                                                <option value="4">pôvodný stav</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Construction type <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="selectbasicddd" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                                <option value="1">tehla</option>
-                                                                <option value="2">panel</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Heating type <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="selectbasicddd" name="selectbasicddd" class="form-control">
-                                                                <option value="0">podlahové</option>
-                                                                <option value="1">elektrické</option>
-                                                                <option value="2">plynové</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="availability_from">
-                                                                Availability from <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="date" class="form-control" id="availability_from" />
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-md-6">
-                                                                    <label for="price">
-                                                                        Price <span class="text-danger">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="price" />
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label for="deposit">
-                                                                        Deposit <span class="text-danger">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="deposit" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="col-md-6">
-
-                                                        <div class="form-group">
-                                                            <label for="price">
-                                                                Commission <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="commission" />
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="rooms">
-                                                                Rooms <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="rooms" />
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="country">
-                                                                Country <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="countrt" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                                <option value="1">Slovak republic</option>
-                                                                <option value="2">Czech republic</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="country">
-                                                                District <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="countrt" name="selectbasicddd" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                            </select>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-md-9">
-                                                                    <label for="street">
-                                                                        Street <span class="text-danger">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="street" />
-                                                                </div>
-                                                                <div class="col-md-3">
-                                                                    <label for="street-num">
-                                                                        Street num <span class="text-danger">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="street-num" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <div class="row">
-                                                                <div class="col-md-9">
-                                                                    <label for="city">
-                                                                        City <span class="text-danger">*</span>
-                                                                    </label>
-                                                                    <select id="selectbasicddd" name="city" class="form-control">
-                                                                        <option value="0">Choose</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="col-md-3">
-                                                                    <label for="zip">
-                                                                        ZIP <span class="text-danger">*</span>
-                                                                    </label>
-                                                                    <input type="text" class="form-control" id="zip" />
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label for="residential_area">
-                                                                Residential area <span class="text-danger">*</span>
-                                                            </label>
-                                                            <select id="residential_area" name="city" class="form-control">
-                                                                <option value="0">Choose</option>
-                                                            </select>
-                                                        </div>
-
-
-                                                        <!-- Multiple Checkboxes -->
-                                                        <div class="form-group row">
-                                                            <label class="col-md-4 control-label" for="checkboxes">Choose</label>
-                                                            <div class="col-md-4">
-                                                                <div class="checkbox">
-                                                                    <label for="boiler">
-                                                                        <input type="checkbox" name="checkboxes" id="boiler" value="1">
-                                                                        boiler
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="garage">
-                                                                        <input type="checkbox" name="checkboxes" id="garage" value="2">
-                                                                        garage
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="pantry">
-                                                                        <input type="checkbox" name="checkboxes" id="pantry" value="3">
-                                                                        pantry
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="storage">
-                                                                        <input type="checkbox" name="checkboxes" id="storage" value="4">
-                                                                        storage room
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="elevator">
-                                                                        <input type="checkbox" name="checkboxes" id="elevator" value="5">
-                                                                        elevator
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="checkboxes-1">
-                                                                        <input type="checkbox" name="checkboxes" id="checkboxes-1" value="6">
-                                                                        air conditioner
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="access">
-                                                                        <input type="checkbox" name="checkboxes" id="access" value="7">
-                                                                        disabled access
-                                                                    </label>
-                                                                </div>
-                                                                <div class="checkbox">
-                                                                    <label for="cellar">
-                                                                        <input type="checkbox" name="checkboxes" id="cellar" value="8">
-                                                                        cellar
-                                                                    </label>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">
-                                                    Add flat
-                                                </button>
-                                            </form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="offer_type">Offer type <span class="text-danger">*</span></label> <select class="form-control" id="offer_type" name="offer_type">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                    <option value="1">
+                                                        Predaj
+                                                    </option>
+                                                    <option value="2">
+                                                        Kupa
+                                                    </option>
+                                                    <option value="3">
+                                                        Prenajom
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="kind">Kind <span class="text-danger">*</span></label> <select class="form-control" id="kind" name="kind">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                    <option value="1">
+                                                        Dom
+                                                    </option>
+                                                    <option value="2">
+                                                        Byt
+                                                    </option>
+                                                    <option value="3">
+                                                        Priestor
+                                                    </option>
+                                                    <option value="4">
+                                                        Objekt
+                                                    </option>
+                                                    <option value="5">
+                                                        Rekreačný dom
+                                                    </option>
+                                                    <option value="6">
+                                                        Pozemok
+                                                    </option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane" id="panel-270459">
-                                        <div style="padding:30px">
-                                            <form role="form">
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="firstName">
-                                                                Company name <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="firstName" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="email">
-                                                                Email <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="email" class="form-control" id="email" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="phone">
-                                                                Phone <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="phone" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="street">
-                                                                Street <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="street" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="street">
-                                                                City <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="city" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="zip">
-                                                                Zip Code <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="text" class="form-control" id="zip" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">
-                                                                Password <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="password" class="form-control" id="exampleInputPassword1" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleInputPassword1">
-                                                                Repeat Password <span class="text-danger">*</span>
-                                                            </label>
-                                                            <input type="password" class="form-control" id="exampleInputPassword1" />
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="aboutMe">
-                                                                About
-                                                            </label>
-                                                            <textarea class="form-control" id="aboutMe"></textarea>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" /> I agree with <a href="#">terms</a> and conditions
-                                                    </label>
-                                                </div>
-                                                <button type="submit" class="btn btn-primary">
-                                                    Sign Up
-                                                </button>
-                                            </form>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="title">Title <span class="text-danger">*</span></label> <input class="form-control" id="title" name="title" type="text">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="description">Description <span class="text-danger">*</span></label>
+                                                <textarea class="form-control" id="description" name="description" rows="5">default text</textarea>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+
+                                    <div class="page-header text-center" style="margin: 0 0 20px">
+                                        <h2>Details</h2>
+                                    </div>
+
+                                    <div class="page-header text-center" style="margin: 0 0 20px">
+                                        <h4>About</h4>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="thing">Thig type <span class="text-danger">*</span></label> <select class="form-control" id="selectbasicddd" name="thing">
+                                            <option value="0">
+                                                Choose
+                                            </option>
+                                            <option value="1">
+                                                rozostavané
+                                            </option>
+                                            <option value="2">
+                                                úplná rekonštrukcia
+                                            </option>
+                                            <option value="3">
+                                                čiatočná rekonštrukcia
+                                            </option>
+                                            <option value="4">
+                                                pôvodný stav
+                                            </option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <div class="form-group">
+                                            <label for="rooms">Rooms <span class="text-danger">*</span></label> <input class="form-control" id="rooms" type="text">
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <label for="usable_area">Usable area (m<sup>2</sup>) <span class="text-danger">*</span></label>
+                                                <input class="form-control" id="usable_area" name="usable_area" type="text">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="built-up_area">Built-up area (m<sup>2</sup>) <span class="text-danger">*</span></label>
+                                                <input class="form-control" id="built-up_area" name="built-up_area" type="text">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label for="land_area">Land area (m<sup>2</sup>) <span class="text-danger">*</span></label>
+                                                <input class="form-control" id="land_area" name="land_area" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="window_type">Window type <span class="text-danger">*</span></label> <select class="form-control" id="window_type" name="window_type">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                    <option value="1">
+                                                        plastové
+                                                    </option>
+                                                    <option value="2">
+                                                        francúzske
+                                                    </option>
+                                                    <option value="3">
+                                                        drevenné
+                                                    </option>
+                                                    <option value="4">
+                                                        euro
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="construction_type">Construction type <span class="text-danger">*</span></label> <select class="form-control" id="construction_type" name="construction_type">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                    <option value="1">
+                                                        tehla
+                                                    </option>
+                                                    <option value="2">
+                                                        panel
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="heating_type">Heating type <span class="text-danger">*</span></label> <select class="form-control" id="heating_type" name="heating_type">
+                                                    <option value="0">
+                                                        podlahové
+                                                    </option>
+                                                    <option value="1">
+                                                        elektrické
+                                                    </option>
+                                                    <option value="2">
+                                                        plynové
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group text-center">
+                                        <label class="control-label" for="checkboxes">Choose</label>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="checkbox-inline">
+                                                    <label for="boiler"><input id="boiler" name="boiler" type="checkbox" value="1"> boiler</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="garage"><input id="garage" name="garage" type="checkbox" value="2"> garage</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="pantry"><input id="pantry" name="pantry" type="checkbox" value="3"> pantry</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="storage"><input id="storage" name="storage_room" type="checkbox" value="4"> storage room</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="elevator"><input id="elevator" name="elevator" type="checkbox" value="5"> elevator</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="air_conditioner"><input id="air_conditioner" name="air_conditioner" type="checkbox" value="6"> air conditioner</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="disabled_access"><input id="disabled_access" name="disabled_access" type="checkbox" value="7"> disabled access</label>
+                                                </div>
+                                                <div class="checkbox-inline">
+                                                    <label for="cellar"><input id="cellar" name="cellar" type="checkbox" value="8"> cellar</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="page-header text-center" style="margin: 0 0 20px">
+                                        <h4>Location</h4>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-9">
+                                                        <label for="street">Street <span class="text-danger">*</span></label> <input class="form-control" id="street" name="street" type="text">
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="street_number">Street number <span class="text-danger">*</span></label> <input class="form-control" id="street_number" name="street_number" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <div class="col-md-9">
+                                                        <label for="city">City <span class="text-danger">*</span></label> <select class="form-control" id="city" name="city">
+                                                            <option value="0">
+                                                                Choose
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="zip">ZIP <span class="text-danger">*</span></label> <input class="form-control" id="zip" name="zip" type="text">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="country">Country <span class="text-danger">*</span></label> <select class="form-control" id="country" name="country">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                    <option value="1">
+                                                        Slovak republic
+                                                    </option>
+                                                    <option value="2">
+                                                        Czech republic
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="page-header text-center" style="margin: 0 0 20px">
+                                        <h2>Price</h2>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="row">
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <label for="deposit">Price <span class="text-danger">*</span></label>
+                                                        <div class="input-group"> <span class="input-group-addon">&euro;</span> <input class="form-control" aria-label="Amount (to the nearest dollar)"> <span class="input-group-addon">.00</span> </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label>&nbsp;</label>
+                                                            <select class="form-control" id="city" name="city">
+                                                            <option value="0">&euro;</option>
+                                                            <option value="0">&euro;/m<sup>2</sup></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                                <label for="deposit">Deposit <span class="text-danger">*</span></label> <input class="form-control" id="deposit" name="deposit" type="text">
+                                        </div>
+                                        <div class="col-md-4">
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+
+
+
+
+                                            <div class="form-group">
+                                                <label for="availability_from">Availability from <span class="text-danger">*</span></label> <input class="form-control" id="availability_from" name="availability_from" type="date">
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="row">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label for="commission">Commission <span class="text-danger">*</span></label> <input class="form-control" id="commission" name="commission" type="text">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="country">District <span class="text-danger">*</span></label> <select class="form-control" id="country" name="country">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="residential_area">Residential area <span class="text-danger">*</span></label> <select class="form-control" id="residential_area" name="residential_area">
+                                                    <option value="0">
+                                                        Choose
+                                                    </option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div><button class="btn btn-primary" type="submit">Add flat</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </main>
             </div>
         </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    </div><!-- Modal -->
+    <div aria-labelledby="myModalLabel" class="modal fade" id="myModal" role="dialog" tabindex="-1">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Sign In</h4>
                 </div>
                 <div class="modal-body">
                     <form>
                         <div class="form-group">
-                            <label for="email">Email address:</label>
-                            <input type="email" class="form-control" id="email">
+                            <label for="email">Email address:</label> <input class="form-control" id="email" type="email">
                         </div>
                         <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
+                            <label for="pwd">Password:</label> <input class="form-control" id="pwd" type="password">
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox"> Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        </div><button class="btn btn-primary" type="submit">Sign In</button>
                     </form>
                 </div>
             </div>
