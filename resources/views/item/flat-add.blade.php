@@ -17,7 +17,7 @@
                             </div>
 
                             <div style="padding:30px">
-                                <form action="/add-flat/add" class="ajax" method="post" role="form">
+                                <form action="/flat-add" class="ajax" method="post" role="form">
                                     <div class="page-header text-center" style="margin: 0 0 20px">
                                         <h2>Basics</h2>
                                     </div>
