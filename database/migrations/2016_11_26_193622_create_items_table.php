@@ -25,6 +25,8 @@ class CreateItemsTable extends Migration
             $table->integer('heating_type_id')->unsigned(); // podlahové, elektrické, plynové etc
             $table->timestamp('availability_from')->nullable();
             $table->float('price')->nullable();
+            $table->float('price_for_m2')->nullable();
+            $table->boolean('m2')->default(FALSE);
             $table->float('deposit')->nullable();
             $table->float('commission')->nullable();
             $table->integer('room')->nullable();
@@ -35,12 +37,15 @@ class CreateItemsTable extends Migration
             $table->string('street_number');
             $table->string('zip');
             $table->string('city');
-            $table->integer('residential_area')->nullable();
+            $table->integer('usable_area')->nullable();
+            $table->integer('built_up_area')->nullable();
+            $table->integer('land_area')->nullable();
             $table->string('title');
             $table->text('description')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->integer('floor')->nullable();
+            $table->boolean('for_m2')->default(FALSE);
             $table->boolean('active')->default(TRUE);
             $table->boolean('reserve')->default(FALSE);
             $table->boolean('boiler')->default(FALSE);

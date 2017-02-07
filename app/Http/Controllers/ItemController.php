@@ -29,22 +29,32 @@ class ItemController extends Controller
 
     public function store(Request $request)
     {
+        unset($request["_token"]);
+        dump($request->all());die();
 
         $rules = [
             'offer_type' => 'required',
             'kind' => 'required',
             'title' => 'required',
             'description' => 'required',
+            'thing_id' => 'required',
+            'room' => 'required',
+            'residential_area' => 'required',
+            'window_type_id' => 'required',
+            'construction_type_id' => 'required',
+            'heating_type_id' => 'required',
+
+
         ];
 
         $validator = Validator::make($request->all(), $rules);
-
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
-        Item::create([]);
+
+        //Item::create([]);
         dump($request->all());
 
 
