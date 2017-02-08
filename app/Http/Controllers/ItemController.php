@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\ConstructionType;
+use App\HeatingType;
 use App\Item;
+use App\ItemKind;
+use App\ItemOffer;
+use App\Thing;
+use App\WindowType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,8 +29,14 @@ class ItemController extends Controller
 
     public function create()
     {
-
-        return view('item.flat-add' );
+        $offers = ItemOffer::all();
+        $kinds = ItemKind::all();
+        $things = Thing::all();
+        $windows = WindowType::all();
+        $constructions = ConstructionType::all();
+        $heatings = HeatingType::all();
+        return view('item.flat-add',["kinds"=> $kinds, "offers" => $offers, "things" => $things, "windows" => $windows,
+        "heatings" => $heatings, "constructions" => $constructions] );
     }
 
     public function store(Request $request)

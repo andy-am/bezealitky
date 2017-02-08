@@ -25,46 +25,21 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="offer_type">Offer type <span class="text-danger">*</span></label> <select class="form-control" id="offer_type" name="offer_type">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                    <option value="1">
-                                                        Predaj
-                                                    </option>
-                                                    <option value="2">
-                                                        Kupa
-                                                    </option>
-                                                    <option value="3">
-                                                        Prenajom
-                                                    </option>
+                                                <label for="offer_type">Offer type <span class="text-danger">*</span></label>
+                                                <select class="form-control" id="offer_type" name="offer_type_id">
+                                                    @foreach($offers as $offer)
+                                                        <option value="{{$offer->id}}">{{$offer->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="kind">Kind <span class="text-danger">*</span></label> <select class="form-control" id="kind" name="kind">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                    <option value="1">
-                                                        Dom
-                                                    </option>
-                                                    <option value="2">
-                                                        Byt
-                                                    </option>
-                                                    <option value="3">
-                                                        Priestor
-                                                    </option>
-                                                    <option value="4">
-                                                        Objekt
-                                                    </option>
-                                                    <option value="5">
-                                                        Rekreačný dom
-                                                    </option>
-                                                    <option value="6">
-                                                        Pozemok
-                                                    </option>
+                                                <label for="kind">Kind <span class="text-danger">*</span></label>
+                                                <select class="form-control" id="kind" name="kind">
+                                                    @foreach($kinds as $kind)
+                                                        <option value="{{$kind->id}}">{{$kind->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
@@ -92,22 +67,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="thing">Thig type <span class="text-danger">*</span></label> <select class="form-control" id="selectbasicddd" name="thing">
-                                            <option value="0">
-                                                Choose
-                                            </option>
-                                            <option value="1">
-                                                rozostavané
-                                            </option>
-                                            <option value="2">
-                                                úplná rekonštrukcia
-                                            </option>
-                                            <option value="3">
-                                                čiatočná rekonštrukcia
-                                            </option>
-                                            <option value="4">
-                                                pôvodný stav
-                                            </option>
+                                        <label for="thing">Thing type <span class="text-danger">*</span></label>
+                                        <select class="form-control" id="selectbasicddd" name="thing">
+                                            @foreach($things as $thing)
+                                                <option value="{{$thing->id}}">{{$thing->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -136,51 +100,27 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="window_type">Window type <span class="text-danger">*</span></label> <select class="form-control" id="window_type" name="window_type">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                    <option value="1">
-                                                        plastové
-                                                    </option>
-                                                    <option value="2">
-                                                        francúzske
-                                                    </option>
-                                                    <option value="3">
-                                                        drevenné
-                                                    </option>
-                                                    <option value="4">
-                                                        euro
-                                                    </option>
+                                                    @foreach($windows as $window)
+                                                        <option value="{{$window->id}}">{{$window->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="construction_type">Construction type <span class="text-danger">*</span></label> <select class="form-control" id="construction_type" name="construction_type">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                    <option value="1">
-                                                        tehla
-                                                    </option>
-                                                    <option value="2">
-                                                        panel
-                                                    </option>
+                                                    @foreach($constructions as $construction)
+                                                        <option value="{{$construction->id}}">{{$construction->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label for="heating_type">Heating type <span class="text-danger">*</span></label> <select class="form-control" id="heating_type" name="heating_type">
-                                                    <option value="0">
-                                                        podlahové
-                                                    </option>
-                                                    <option value="1">
-                                                        elektrické
-                                                    </option>
-                                                    <option value="2">
-                                                        plynové
-                                                    </option>
+                                                    @foreach($heatings as $heating)
+                                                        <option value="{{$heating->id}}">{{$heating->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
