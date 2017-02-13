@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\City;
 use App\ConstructionType;
+use App\County;
+use App\District;
 use App\HeatingType;
 use App\Item;
 use App\ItemKind;
@@ -29,14 +32,18 @@ class ItemController extends Controller
 
     public function create()
     {
-        $offers = ItemOffer::all();
-        $kinds = ItemKind::all();
-        $things = Thing::all();
-        $windows = WindowType::all();
-        $constructions = ConstructionType::all();
-        $heatings = HeatingType::all();
+        $offers = ItemOffer::all()->sortBy("name");
+        $kinds = ItemKind::all()->sortBy("name");
+        $things = Thing::all()->sortBy("name");
+        $windows = WindowType::all()->sortBy("name");
+        $constructions = ConstructionType::all()->sortBy("name");
+        $heatings = HeatingType::all()->sortBy("name");
+        $districts = District::all()->sortBy("name");
+        $counties = County::all()->sortBy("name");
+        $cities = City::all()->sortBy("name");
         return view('item.flat-add',["kinds"=> $kinds, "offers" => $offers, "things" => $things, "windows" => $windows,
-        "heatings" => $heatings, "constructions" => $constructions] );
+        "heatings" => $heatings, "constructions" => $constructions, "districts" => $districts,/* "counties" => $counties,
+        "cities" => $cities */] );
     }
 
     public function store(Request $request)
@@ -51,7 +58,7 @@ class ItemController extends Controller
             'description' => 'required',
             'thing_id' => 'required',
             'room' => 'required',
-            'residential_area' => 'required',
+            'usable_area' => 'required',
             'window_type_id' => 'required',
             'construction_type_id' => 'required',
             'heating_type_id' => 'required',

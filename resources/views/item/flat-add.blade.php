@@ -177,13 +177,29 @@
                                                     </div>
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
                                                 <div class="row">
-                                                    <div class="col-md-9">
-                                                        <label for="city">City <span class="text-danger">*</span></label> <select class="form-control" id="city" name="city">
-                                                            <option value="0">
-                                                                Choose
-                                                            </option>
+
+                                                    <div class="col-md-3">
+                                                        <label for="county_id">County <span class="text-danger">*</span></label> <select class="form-control" id="county_id" name="county_id">
+                                                            @foreach($counties as $county)
+                                                                <option value="{{$county->id}}">{{$county->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="district_id">District <span class="text-danger">*</span></label> <select class="form-control" id="district_id" name="district_id">
+                                                            @foreach($districts as $district)
+                                                                <option value="{{$district->id}}">{{$district->name}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <label for="city">City <span class="text-danger">*</span></label> <select class="form-control" id="city_id" name="city_id">
+                                                            @foreach($cities as $city)
+                                                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                                            @endforeach
                                                         </select>
                                                     </div>
                                                     <div class="col-md-3">
@@ -265,21 +281,7 @@
                                             </div>
 
 
-                                            <div class="form-group">
-                                                <label for="country">District <span class="text-danger">*</span></label> <select class="form-control" id="country" name="country">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                </select>
-                                            </div>
 
-                                            <div class="form-group">
-                                                <label for="residential_area">Residential area <span class="text-danger">*</span></label> <select class="form-control" id="residential_area" name="residential_area">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                </select>
-                                            </div>
 
                                         </div>
                                     </div><button class="btn btn-primary" type="submit">Add flat</button>

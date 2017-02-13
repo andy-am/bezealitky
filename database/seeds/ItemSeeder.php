@@ -39,7 +39,7 @@ class ItemSeeder extends Seeder
                 'street_number' => $faker->numberBetween(1,100),
                 'zip' => 95503,
                 'city' => $faker->city,
-                'residential_area' => 23,
+                'usable_area' => 23,
                 'title' => "Some Title",
                 'description' => "Some description",
                 'longitude' => 'string',
