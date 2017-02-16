@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\City;
 use App\ConstructionType;
+use App\Country;
 use App\County;
 use App\District;
 use App\HeatingType;
@@ -38,12 +39,13 @@ class ItemController extends Controller
         $windows = WindowType::all()->sortBy("name");
         $constructions = ConstructionType::all()->sortBy("name");
         $heatings = HeatingType::all()->sortBy("name");
+        $countries = Country::all()->sortBy("name");
         $districts = District::all()->sortBy("name");
         $counties = County::all()->sortBy("name");
         $cities = City::all()->sortBy("name");
         return view('item.flat-add',["kinds"=> $kinds, "offers" => $offers, "things" => $things, "windows" => $windows,
         "heatings" => $heatings, "constructions" => $constructions, "districts" => $districts, "counties" => $counties,
-        "cities" => $cities ] );
+        "cities" => $cities, "countries" => $countries ] );
     }
 
     public function store(Request $request)

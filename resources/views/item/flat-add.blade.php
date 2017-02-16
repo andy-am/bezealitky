@@ -209,16 +209,11 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="country">Country <span class="text-danger">*</span></label> <select class="form-control" id="country" name="country">
-                                                    <option value="0">
-                                                        Choose
-                                                    </option>
-                                                    <option value="1">
-                                                        Slovak republic
-                                                    </option>
-                                                    <option value="2">
-                                                        Czech republic
-                                                    </option>
+                                                <label for="country">Country <span class="text-danger">*</span></label>
+                                                <select class="form-control" id="country" name="country">
+                                                    @foreach($countries as $country)
+                                                        <option value="{{$country->id}}">{{$country->name}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>
