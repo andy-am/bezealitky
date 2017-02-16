@@ -21,13 +21,13 @@ class CreateUsersTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('post_title')->nullable();
             $table->string('company_name')->nullable();
-            $table->string('country'); // TODO
-            $table->string('county'); // TODO
-            $table->string('district'); // TODO
-            $table->string('city'); // TODO
-            $table->string('street'); // TODO
-            $table->string('street_number'); // TODO
-            $table->string('zip');  // TODO
+            $table->string('country')->nulllable(); // TODO
+            $table->string('county')->nulllable(); // TODO
+            $table->string('district')->nulllable(); // TODO
+            $table->string('city')->nulllable(); // TODO
+            $table->string('street')->nulllable(); // TODO
+            $table->string('street_number')->nulllable(); // TODO
+            $table->string('zip')->nulllable();  // TODO
             $table->text('note')->nullable();
             $table->text('about_me')->nullable();
             $table->string('email')->unique();

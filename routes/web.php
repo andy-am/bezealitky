@@ -24,7 +24,6 @@ Route::get('/index', 'TemplateController@index');
 Route::get('/signup', 'TemplateController@signUp');
 
 Route::get('/profile/{id}', 'UserController@profile');
-Route::get('/saveDependencies', 'UserController@saveDependencies');
 
 
 // FLAT

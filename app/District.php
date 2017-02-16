@@ -13,6 +13,6 @@ class District extends Model
      *
      * @var array
      */
-    protected $fillable = [ "name", "slug", "county_id"];
+    protected $fillable = [ "name", "slug", "code", "county_id"];
 
 }

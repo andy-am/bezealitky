@@ -32,13 +32,13 @@ class CreateItemsTable extends Migration
             $table->float('deposit')->nullable();
             $table->float('commission')->nullable();
             $table->integer('room')->nullable();
-            $table->string('country'); // TODO
-            $table->string('county'); // TODO
-            $table->string('district'); // TODO
-            $table->string('street'); // TODO
-            $table->string('street_number'); // TODO
-            $table->string('zip'); // TODO
-            $table->string('city'); // TODO
+            $table->string('country')->nullable(); // TODO
+            $table->string('county')->nullable(); // TODO
+            $table->string('district')->nullable(); // TODO
+            $table->string('street')->nullable(); // TODO
+            $table->string('street_number')->nullable(); // TODO
+            $table->string('zip')->nullable(); // TODO
+            $table->string('city')->nullable(); // TODO
             $table->integer('usable_area')->nullable();
             $table->integer('built_up_area')->nullable();
             $table->integer('land_area')->nullable();

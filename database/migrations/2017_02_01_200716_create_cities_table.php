@@ -17,6 +17,7 @@ class CreateCitiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->integer('population')->default(0);
             $table->unsignedInteger('district_id');
             $table->text('description')->nullable();
             $table->boolean('active')->default(TRUE);

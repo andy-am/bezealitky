@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDistrictsTable extends Migration
+class CreateZipsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateDistrictsTable extends Migration
      */
     public function up()
     {
-        Schema::create('districts', function (Blueprint $table) {
+        Schema::create('zips', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('slug');
-            $table->string('code')->nullable();
-            $table->unsignedInteger('county_id');
-            $table->text('description')->nullable();
+            $table->string('number');
+            $table->unsignedInteger('city_id');
             $table->boolean('active')->default(TRUE);
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('county_id')->references('id')->on('counties')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('no action');
 
         });
     }
@@ -35,6 +32,6 @@ class CreateDistrictsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('districts');
+        Schema::drop('zips');
     }
 }

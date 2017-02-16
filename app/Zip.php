@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class City extends Model
+class Zip extends Model
 {
 
     /**
@@ -13,8 +13,8 @@ class City extends Model
      *
      * @var array
      */
-    protected $fillable = ["name", "slug", "population", "district_id"];
+    protected $fillable = ["number", "city_id", "active"];
 
-    protected $table = 'cities';
+    protected $table = 'zips';
 
 }
