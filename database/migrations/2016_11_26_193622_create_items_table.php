@@ -15,14 +15,16 @@ class CreateItemsTable extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('creator_id')->unsigned();
-            $table->integer('item_kind_id')->unsigned(); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
-            $table->integer('item_type_id')->unsigned(); //
-            $table->integer('window_type_id')->unsigned(); // plastové, francúzske, drevenné, euro
-            $table->integer('item_offer_id')->unsigned(); // predaj, kupa, prenajom etc...
-            $table->integer('thing_id')->unsigned(); // rozostavané, úplná rekonštrukcia, čiatočná rekonštrukcia, pôvodný stav
-            $table->integer('construction_type_id')->unsigned(); // tehla, panel, etc.
-            $table->integer('heating_type_id')->unsigned(); // podlahové, elektrické, plynové etc
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->unsignedInteger('creator_id');
+            $table->unsignedInteger('item_kind_id'); // Dom, byt, priestor, objekt, rekreačný dom, pozemok.
+            $table->unsignedInteger('item_type_id'); //
+            $table->unsignedInteger('window_type_id'); // plastové, francúzske, drevenné, euro
+            $table->unsignedInteger('item_offer_id'); // predaj, kupa, prenajom etc...
+            $table->unsignedInteger('thing_id'); // rozostavané, úplná rekonštrukcia, čiatočná rekonštrukcia, pôvodný stav
+            $table->unsignedInteger('construction_type_id'); // tehla, panel, etc.
+            $table->unsignedInteger('heating_type_id'); // podlahové, elektrické, plynové etc
             $table->timestamp('availability_from')->nullable();
             $table->float('price')->nullable();
             $table->float('price_for_m2')->nullable();
@@ -30,18 +32,16 @@ class CreateItemsTable extends Migration
             $table->float('deposit')->nullable();
             $table->float('commission')->nullable();
             $table->integer('room')->nullable();
-            $table->string('country');
-            $table->string('county');
-            $table->string('district');
-            $table->string('street');
-            $table->string('street_number');
-            $table->string('zip');
-            $table->string('city');
+            $table->string('country'); // TODO
+            $table->string('county'); // TODO
+            $table->string('district'); // TODO
+            $table->string('street'); // TODO
+            $table->string('street_number'); // TODO
+            $table->string('zip'); // TODO
+            $table->string('city'); // TODO
             $table->integer('usable_area')->nullable();
             $table->integer('built_up_area')->nullable();
             $table->integer('land_area')->nullable();
-            $table->string('title');
-            $table->text('description')->nullable();
             $table->string('longitude')->nullable();
             $table->string('latitude')->nullable();
             $table->integer('floor')->nullable();

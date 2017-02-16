@@ -18,11 +18,12 @@ class CreateCitiesTable extends Migration
             $table->string('name');
             $table->string('slug');
             $table->unsignedInteger('district_id');
-            $table->unsignedInteger('county_id');
-            $table->foreign('district_id')->references('id')->on('districts')->onUpadte('cascade')->onDelete('cascade');
-            $table->foreign('county_id')->references('id')->on('counties')->onUpadte('cascade')->onDelete('cascade');
+            $table->text('description')->nullable();
+            $table->boolean('active')->default(TRUE);
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('district_id')->references('id')->on('districts')->onUpdate('cascade')->onDelete('no action');
+
         });
     }
 

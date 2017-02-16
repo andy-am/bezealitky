@@ -17,8 +17,12 @@ class CreateCountiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->unsignedInteger('country_id');
+            $table->text('description')->nullable();
+            $table->boolean('active')->default(TRUE);
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('no action');
 
         });
     }

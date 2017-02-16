@@ -13,9 +13,7 @@ class Country extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ["name", "slug"];
 
-
+    protected $table = 'countries';
 }

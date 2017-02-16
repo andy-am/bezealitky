@@ -13,7 +13,7 @@ class City extends Model
      *
      * @var array
      */
-    protected $fillable = ["name", "slug", "district_id", "county_id"];
+    protected $fillable = ["name", "slug", "district_id"];
 
     protected $table = 'cities';
 

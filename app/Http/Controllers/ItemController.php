@@ -42,8 +42,8 @@ class ItemController extends Controller
         $counties = County::all()->sortBy("name");
         $cities = City::all()->sortBy("name");
         return view('item.flat-add',["kinds"=> $kinds, "offers" => $offers, "things" => $things, "windows" => $windows,
-        "heatings" => $heatings, "constructions" => $constructions, "districts" => $districts,/* "counties" => $counties,
-        "cities" => $cities */] );
+        "heatings" => $heatings, "constructions" => $constructions, "districts" => $districts, "counties" => $counties,
+        "cities" => $cities ] );
     }
 
     public function store(Request $request)
@@ -77,6 +77,6 @@ class ItemController extends Controller
         dump($request->all());
 
 
-        return response()->json(["json som "], 200);
+        return response()->json(["json som"], 200);
     }
 }

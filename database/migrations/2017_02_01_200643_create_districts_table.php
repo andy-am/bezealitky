@@ -17,8 +17,13 @@ class CreateDistrictsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
+            $table->unsignedInteger('county_id');
+            $table->text('description')->nullable();
+            $table->boolean('active')->default(TRUE);
             $table->softDeletes();
             $table->timestamps();
+            $table->foreign('county_id')->references('id')->on('counties')->onUpdate('cascade')->onDelete('no action');
+
         });
     }
 

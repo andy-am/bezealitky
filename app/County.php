@@ -13,6 +13,7 @@ class County extends Model
      *
      * @var array
      */
-    protected $fillable = ["name", "slug"];
+    protected $fillable = ["name", "slug", "country_id"];
 
+    protected $table = 'counties';
 }
