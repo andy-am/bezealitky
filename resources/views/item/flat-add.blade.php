@@ -196,7 +196,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-md-3">
-                                                        <label for="city">City <span class="text-danger">*</span></label> <select class="form-control select2" id="city_id" name="city_id">
+                                                        <label for="city">City <span class="text-danger">*</span></label> <select class="form-control" id="city_id" name="city_id">
                                                             @foreach($cities as $city)
                                                                 <option value="{{$city->id}}">{{$city->name}}</option>
                                                             @endforeach

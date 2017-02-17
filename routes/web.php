@@ -32,3 +32,8 @@ Route::get('/flat-detail/{id}', 'ItemController@detail');
 Route::get('/flat-add', 'ItemController@create');
 
 Route::post('/flat-add', 'ItemController@store');
+
+
+//api
+
+Route::get('/api/get-cities', 'ItemController@apiGetCities');

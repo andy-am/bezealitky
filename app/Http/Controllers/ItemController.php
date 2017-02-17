@@ -14,6 +14,7 @@ use App\ItemOffer;
 use App\Thing;
 use App\WindowType;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 class ItemController extends Controller
@@ -80,5 +81,14 @@ class ItemController extends Controller
 
 
         return response()->json(["json som"], 200);
+    }
+
+    public function apiGetCities(Request $request){
+        $term = $request->get("term");
+        $term = $term["term"];
+
+        $cities = City::where("name","LIKE", "%" . $term . "%")->get();
+
+        return Response()->json($cities);
     }
 }
