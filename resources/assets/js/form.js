@@ -2,29 +2,17 @@
  * Ajax form based on Bootstrap 3 & Laravel 5
  * 2017 by Michal Gasparik
  */
+var AXFORM = {};
+
 (function($){
 
-    $(function(){
+    AXFORM.form = $('form.ajax');
+    AXFORM.method = AXFORM.form.attr('method');
+    AXFORM.action = AXFORM.form.attr('action');
+    AXFORM.grecaptcha = AXFORM.form.attr('data-grecaptcha');
+    AXFORM.token = $('meta[name="csrf-token"]').attr('content');
 
-        // form element
-        var $form = $('form.ajax');
-
-        // form method
-        var method = $form.attr('method');
-
-        // form action
-        var action = $form.attr('action');
-
-        // token
-        var token = $('meta[name="csrf-token"]').attr('content');
-
-        // form logic
-        var form = {
-
-            // config
-            config : {
-                grecaptcha : false
-            },
+    AXFORM.service  = {
 
             /**
              * Submit method
@@ -36,17 +24,16 @@
             _submit: function (e, self) {
 
                 e.preventDefault();
-                console.log('Im submited form, yeah!');
 
                 // form serialized data
-                var data = $form.serialize() + '&_token=' + token;
+                var data = AXFORM.token ? AXFORM.form.serialize() + '&_token=' + AXFORM.token : AXFORM.form.serialize();
 
                 console.log(data);
 
                 // form ajax options
                 var options = {
-                    method: method,
-                    url: action,
+                    method: AXFORM.method,
+                    url: AXFORM.action,
                     data: data,
                     dataType: 'json'
                 };
@@ -55,13 +42,13 @@
 
                     console.log('done');
                     console.log(response);
-                    form._validate(self, response)
+                    AXFORM.service._validate(self, response)
 
                 }).fail(function (response) {
 
                     console.log('fail');
                     console.log(response);
-                    form._validate(self, response)
+                    AXFORM.service._validate(self, response)
 
                 });
 
@@ -107,7 +94,7 @@
 
                 } else if(status == 200){
 
-                    form._reset();
+                    AXFORM.form._reset();
                     $('#success-notification').addClass('show-up');
 
                 }
@@ -115,12 +102,13 @@
             },
 
             _reset : function(){
-                if(form.config.grecaptcha){
+
+                if(AXFORM.init().grecaptcha){
                     grecaptcha.reset();
                 }
+                AXFORM.form.find('.help-block').remove();
+                AXFORM.form[0].reset();
 
-                $form.find('.help-block').remove();
-                $form[0].reset();
             }
         };
 
@@ -128,10 +116,15 @@
          * Bind on form submit
          */
 
-        $(document).on('submit', $form, function (e){
-            form._submit(e, $(this));
+        $(document).on('submit', AXFORM.form, function (e){
+            AXFORM.service._submit(e, $(this));
         });
 
-    });
 
 })(jQuery);
+
+console.log(AXFORM.form);
+
+
+
+

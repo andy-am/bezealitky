@@ -15,7 +15,18 @@ elixir(function(mix) {
     mix.scripts([
         '../bower_components/jquery-1.11.1/dist/jquery.min.js',
         '../bower_components/bootstrap/dist/js/bootstrap.min.js',
-        'app.js',
-        'form.js'
+        '../bower_components/select2/dist/js/select2.min.js',
+
+        'includes/_app.start.js',
+            'app.init.js',
+            'form.js',
+        'includes/_app.end.js',
+
     ]);
+
+    mix.sass([
+        'app.scss',
+        '../bower_components/select2/dist/css/select2.min.css'
+    ], 'public/assets/css');
+
 });
