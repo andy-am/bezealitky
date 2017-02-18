@@ -1,6 +1,6 @@
 var APP = {};
 
-APP.init = (function() {
+APP.init = (function($) {
 
     /**
      *  Select2
@@ -8,7 +8,7 @@ APP.init = (function() {
     $('.select2').select2();
 
 
-    $(document).ready(function(){
+    $(function(){
         var url = "api/get-cities";
         $("#city_id").select2({
             minimumInputLength: 2,
@@ -58,7 +58,9 @@ APP.init = (function() {
         $("input.spin-qty").TouchSpin();
     });
 
+    $( window ).on( "load", function() {
+        $('#loader').fadeOut(1500);
+    });
 
-
-}());
+}(jQuery));
 

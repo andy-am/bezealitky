@@ -6827,4 +6827,15 @@ table.options td {
 table.options td + td {
   text-align: right; }
 
+div#loader {
+  width: 100%;
+  height: 32px;
+  position: fixed;
+  bottom: 24px;
+  background-image: url(/assets/grf/preloader/facebook.svg);
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 9999; }
+
 /*# sourceMappingURL=app.css.map */

@@ -19,10 +19,9 @@ elixir(function(mix) {
         '../bower_components/semantic-ui-checkbox/checkbox.min.js',
         '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
 
-        'includes/_app.start.js',
+
             'app.init.js',
             'form.js',
-        'includes/_app.end.js',
 
     ]);
 

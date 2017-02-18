@@ -37,6 +37,8 @@
 @yield('main')
 
 @include('shared.modals.login')
+
+<div id="loader"></div>
 <!-- Scripts -->
 <script src="/js/all.js"></script>
 </body>
