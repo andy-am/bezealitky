@@ -17,6 +17,7 @@
                        'csrfToken' => csrf_token(),
                ]); ?>
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:700" rel="stylesheet">
     <!-- Font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 

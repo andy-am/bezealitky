@@ -1,2 +1,46 @@
 body
   background: #fff
+
+.btn-primary
+  color: #fff !important
+  background-color: $primary
+  border-color: $primary
+
+  &.active,
+  &:active,
+  &.focus,
+  &:focus,
+  &.active.focus,
+  &:active:focus,
+
+  &.hover,
+  &:hover,
+  &.active:hover
+    color: #fff
+    background-color: $primary-dark
+    border-color: $primary-dark
+
+.navbar-default
+  background: $primary
+
+  .navbar-nav > li > a
+    color: #fff
+
+  .navbar-brand
+    color: #fff
+    font-family: 'Titillium Web', sans-serif
+    &:hover
+      color: #fff
+
+  .navbar-nav > .active > a,
+  .navbar-nav > .active > a:hover,
+  .navbar-nav > .active > a:focus
+    color: #fff
+    background-color: $primary-dark
+
+
+  .navbar-nav > .open > a,
+  .navbar-nav > .open > a:hover,
+  .navbar-nav > .open > a:focus
+    color: #fff
+    background-color: $primary-dark

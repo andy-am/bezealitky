@@ -13,7 +13,7 @@ const elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.scripts([
-        '../bower_components/jquery-1.11.1/dist/jquery.min.js',
+        '../bower_components/jquery/dist/jquery.min.js',
         '../bower_components/bootstrap/dist/js/bootstrap.min.js',
         '../bower_components/select2/dist/js/select2.min.js',
 
