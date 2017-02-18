@@ -24,6 +24,7 @@
     "bootstrap": "^3.3.7",
     "select2": "^4.0.3",
     "placeholders": "^4.0.1",
-    "semantic-ui-checkbox": "^2.2.7"
+    "semantic-ui-checkbox": "^2.2.7",
+    "bootstrap-touchspin": "^3.1.2"
   }
 }

@@ -18,7 +18,7 @@
                             <div style="padding:30px">
                                 <form action="/flat-add" class="ajax" method="post" role="form">
                                     <div class="page-header text-center" style="margin: 0 0 20px">
-                                        <h2>Basics</h2>
+                                        <h3>Basics</h3>
                                     </div>
 
                                     <div class="row">
@@ -58,7 +58,7 @@
                                     </div>
 
                                     <div class="page-header text-center" style="margin: 0 0 20px">
-                                        <h2>Details</h2>
+                                        <h3>Details</h3>
                                     </div>
 
                                     <div class="page-header text-center" style="margin: 0 0 20px">
@@ -75,29 +75,29 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="room">Rooms <span class="text-danger">*</span></label> <input class="form-control" id="room" type="text" name="room">
+                                        <label for="room">Rooms <span class="text-danger">*</span></label> <input class="form-control spin-qty" id="room" type="text" name="room">
                                     </div>
 
                                     <div class="row">
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="usable_area">Usable area (m<sup>2</sup>) <span class="text-danger">*</span></label>
-                                                <input class="form-control" id="usable_area" name="usable_area" type="text">
+                                                <label for="usable_area">Usable area <span class="text-danger">*</span></label>
+                                                <input class="form-control spin-m2" id="usable_area" name="usable_area" type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="built-up_area">Built-up area (m<sup>2</sup>)</label>
-                                                <input class="form-control" id="built-up_area" name="built-up_area" type="text">
+                                                <label for="built-up_area">Built-up area</label>
+                                                <input class="form-control spin-m2" id="built-up_area" name="built-up_area" type="text">
                                             </div>
                                         </div>
 
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="land_area">Land area (m<sup>2</sup>)</label>
-                                                <input class="form-control" id="land_area" name="land_area" type="text">
+                                                <label for="land_area">Land area</label>
+                                                <input class="form-control spin-m2" id="land_area" name="land_area" type="text">
                                             </div>
                                         </div>
                                     </div>
@@ -300,7 +300,7 @@
                                         </div>
 
                                     <div class="page-header text-center" style="margin: 0 0 20px">
-                                        <h2>Price</h2>
+                                        <h3>Price</h3>
                                     </div>
 
                                     <div class="row">
