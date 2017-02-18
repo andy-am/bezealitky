@@ -26,7 +26,7 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="offer_type">Offer type <span class="text-danger">*</span></label>
-                                                <select class="form-control" id="offer_type" name="offer_type_id">
+                                                <select class="form-control" id="offer_type" name="offer_type">
                                                     @foreach($offers as $offer)
                                                         <option value="{{$offer->id}}">{{$offer->name}}</option>
                                                     @endforeach
@@ -67,39 +67,48 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="thing">Thing type <span class="text-danger">*</span></label>
-                                        <select class="form-control" id="selectbasicddd" name="thing">
+                                        <label for="thing_id">Thing type <span class="text-danger">*</span></label>
+                                        <select class="form-control" id="thing_id" name="thing_id">
                                             @foreach($things as $thing)
                                                 <option value="{{$thing->id}}">{{$thing->name}}</option>
                                             @endforeach
                                         </select>
                                     </div>
+
                                     <div class="form-group">
+                                        <label for="room">Rooms <span class="text-danger">*</span></label> <input class="form-control" id="room" type="text" name="room">
+                                    </div>
 
-                                        <div class="form-group">
-                                            <label for="rooms">Rooms <span class="text-danger">*</span></label> <input class="form-control" id="rooms" type="text">
-                                        </div>
+                                    <div class="row">
 
-                                        <div class="row">
-                                            <div class="col-md-4">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
                                                 <label for="usable_area">Usable area (m<sup>2</sup>) <span class="text-danger">*</span></label>
                                                 <input class="form-control" id="usable_area" name="usable_area" type="text">
                                             </div>
-                                            <div class="col-md-4">
-                                                <label for="built-up_area">Built-up area (m<sup>2</sup>) <span class="text-danger">*</span></label>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="built-up_area">Built-up area (m<sup>2</sup>)</label>
                                                 <input class="form-control" id="built-up_area" name="built-up_area" type="text">
                                             </div>
-                                            <div class="col-md-4">
-                                                <label for="land_area">Land area (m<sup>2</sup>) <span class="text-danger">*</span></label>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="land_area">Land area (m<sup>2</sup>)</label>
                                                 <input class="form-control" id="land_area" name="land_area" type="text">
                                             </div>
                                         </div>
                                     </div>
 
+
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="window_type">Window type <span class="text-danger">*</span></label> <select class="form-control" id="window_type" name="window_type">
+                                                <label for="window_type_id">Window type <span class="text-danger">*</span></label> <select class="form-control" id="window_type" name="window_type_id">
+                                                    <option value="" disabled selected>Choose</option>
                                                     @foreach($windows as $window)
                                                         <option value="{{$window->id}}">{{$window->name}}</option>
                                                     @endforeach
@@ -108,7 +117,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="construction_type">Construction type <span class="text-danger">*</span></label> <select class="form-control" id="construction_type" name="construction_type">
+                                                <label for="construction_type">Construction type <span class="text-danger">*</span></label> <select class="form-control" id="construction_type" name="construction_type_id">
+                                                    <option value="" disabled selected>Choose</option>
                                                     @foreach($constructions as $construction)
                                                         <option value="{{$construction->id}}">{{$construction->name}}</option>
                                                     @endforeach
@@ -117,7 +127,8 @@
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="heating_type">Heating type <span class="text-danger">*</span></label> <select class="form-control" id="heating_type" name="heating_type">
+                                                <label for="heating_type">Heating type <span class="text-danger">*</span></label> <select class="form-control" id="heating_type" name="heating_type_id">
+                                                    <option value="" disabled selected>Choose</option>
                                                     @foreach($heatings as $heating)
                                                         <option value="{{$heating->id}}">{{$heating->name}}</option>
                                                     @endforeach
@@ -164,61 +175,70 @@
                                     <div class="page-header text-center" style="margin: 0 0 20px">
                                         <h4>Location</h4>
                                     </div>
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <div class="row">
-                                                    <div class="col-md-9">
-                                                        <label for="street">Street <span class="text-danger">*</span></label> <input class="form-control" id="street" name="street" type="text">
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="street_number">Street number <span class="text-danger">*</span></label> <input class="form-control" id="street_number" name="street_number" type="text">
-                                                    </div>
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <div class="form-group">
+                                                    <label for="street">Street <span class="text-danger">*</span></label> <input class="form-control" id="street" name="street" type="text">
                                                 </div>
                                             </div>
-
-                                            <div class="form-group">
-                                                <div class="row">
-
-                                                    <div class="col-md-3">
-                                                        <label for="county_id">County <span class="text-danger">*</span></label> <select class="form-control select2" id="county_id" name="county_id">
-                                                            @foreach($counties as $county)
-                                                                <option value="{{$county->id}}">{{$county->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="district_id">District <span class="text-danger">*</span></label> <select class="form-control select2" id="district_id" name="district_id">
-                                                            @foreach($districts as $district)
-                                                                <option value="{{$district->id}}">{{$district->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="city">City <span class="text-danger">*</span></label> <select class="form-control" id="city_id" name="city_id">
-                                                            @foreach($cities as $city)
-                                                                <option value="{{$city->id}}">{{$city->name}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-3">
-                                                        <label for="zip">ZIP <span class="text-danger">*</span></label> <input class="form-control" id="zip" name="zip" type="text">
-                                                    </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="street_number">Street number <span class="text-danger">*</span></label> <input class="form-control" id="street_number" name="street_number" type="text">
                                                 </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="country">Country <span class="text-danger">*</span></label>
-                                                <select class="form-control" id="country" name="country">
-                                                    @foreach($countries as $country)
-                                                        <option value="{{$country->id}}">{{$country->name}}</option>
-                                                    @endforeach
-                                                </select>
                                             </div>
                                         </div>
-                                    </div>
 
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="county_id">County <span class="text-danger">*</span></label> <select class="form-control select2" placeholder="test" id="county_id" name="county_id" data-placeholder="Select an option">
+                                                        {{--
+                                                        @foreach($counties as $county)
+                                                            <option value="{{$county->id}}">{{$county->name}}</option>
+                                                        @endforeach
+                                                        --}}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="district_id">District <span class="text-danger">*</span></label>
+                                                    <select class="form-control select2" id="district_id" name="district_id" data-placeholder="Select an option">
+                                                        {{--
+                                                        @foreach($districts as $district)
+                                                            <option value="{{$district->id}}">{{$district->name}}</option>
+                                                        @endforeach
+                                                        --}}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="city">City <span class="text-danger">*</span></label>
+                                                    <select class="form-control" id="city_id" name="city_id" data-placeholder="Select an option">
+                                                        {{--
+                                                        @foreach($cities as $city)
+                                                            <option value="{{$city->id}}">{{$city->name}}</option>
+                                                        @endforeach
+                                                        --}}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="zip">ZIP <span class="text-danger">*</span></label> <input class="form-control" id="zip" name="zip" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="country">Country <span class="text-danger">*</span></label>
+                                            <select class="form-control" id="country" name="country">
+                                                @foreach($countries as $country)
+                                                    <option value="{{$country->id}}">{{$country->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
 
                                     <div class="page-header text-center" style="margin: 0 0 20px">
                                         <h2>Price</h2>
@@ -256,11 +276,6 @@
 
                                     <div class="row">
                                         <div class="col-md-6">
-
-
-
-
-
                                             <div class="form-group">
                                                 <label for="availability_from">Availability from <span class="text-danger">*</span></label> <input class="form-control" id="availability_from" name="availability_from" type="date">
                                             </div>

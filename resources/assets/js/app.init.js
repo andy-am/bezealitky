@@ -18,6 +18,8 @@ APP.init = (function() {
                 dataType: 'json',
                 type: "GET",
                 quietMillis: 50,
+                placeholder: $(this).data('placeholder'),
+                allowClear: true,
                 data: function (term) {
                     return {
                         term: term

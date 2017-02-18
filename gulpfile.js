@@ -15,7 +15,7 @@ elixir(function(mix) {
     mix.scripts([
         '../bower_components/jquery/dist/jquery.min.js',
         '../bower_components/bootstrap/dist/js/bootstrap.min.js',
-        '../bower_components/select2/dist/js/select2.min.js',
+        '../bower_components/select2/dist/js/select2.full.min.js',
 
         'includes/_app.start.js',
             'app.init.js',

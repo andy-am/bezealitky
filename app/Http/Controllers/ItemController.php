@@ -52,7 +52,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         unset($request["_token"]);
-        //dump($request->all());die();
+        //dump($request->all());
 
         $rules = [
             'offer_type' => 'required',
@@ -65,8 +65,8 @@ class ItemController extends Controller
             'window_type_id' => 'required',
             'construction_type_id' => 'required',
             'heating_type_id' => 'required',
-
-
+            'street' => 'required',
+            'heating_type_id' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules);
