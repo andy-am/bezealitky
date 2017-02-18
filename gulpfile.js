@@ -16,6 +16,7 @@ elixir(function(mix) {
         '../bower_components/jquery/dist/jquery.min.js',
         '../bower_components/bootstrap/dist/js/bootstrap.min.js',
         '../bower_components/select2/dist/js/select2.full.min.js',
+        '../bower_components/semantic-ui-checkbox/checkbox.min.js',
 
         'includes/_app.start.js',
             'app.init.js',
@@ -25,8 +26,9 @@ elixir(function(mix) {
     ]);
 
     mix.sass([
+        '../bower_components/select2/dist/css/select2.min.css',
+        '../bower_components/semantic-ui-checkbox/checkbox.min.css',
         'app.scss',
-        '../bower_components/select2/dist/css/select2.min.css'
     ], 'public/assets/css');
 
 });

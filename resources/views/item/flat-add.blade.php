@@ -140,32 +140,92 @@
                                         <label class="control-label" for="checkboxes">Choose</label>
 
                                         <div class="row">
+
                                             <div class="col-md-12">
-                                                <div class="checkbox-inline">
-                                                    <label for="boiler"><input id="boiler" name="boiler" type="checkbox" value="1"> boiler</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="garage"><input id="garage" name="garage" type="checkbox" value="2"> garage</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="pantry"><input id="pantry" name="pantry" type="checkbox" value="3"> pantry</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="storage"><input id="storage" name="storage_room" type="checkbox" value="4"> storage room</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="elevator"><input id="elevator" name="elevator" type="checkbox" value="5"> elevator</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="air_conditioner"><input id="air_conditioner" name="air_conditioner" type="checkbox" value="6"> air conditioner</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="disabled_access"><input id="disabled_access" name="disabled_access" type="checkbox" value="7"> disabled access</label>
-                                                </div>
-                                                <div class="checkbox-inline">
-                                                    <label for="cellar"><input id="cellar" name="cellar" type="checkbox" value="8"> cellar</label>
+
+                                                <div class="panel panel-default">
+                                                    <table class="table table-hover options">
+                                                        <tr>
+                                                            <td>
+                                                                <label for="boiler">Boiler</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="boiler" name="boiler" value="1">
+                                                                    <label for="boiler">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="pantry">Pantry</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="pantry" name="pantry" value="2">
+                                                                    <label for="pantry">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="storage_room">Storage room</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="storage_room" name="storage_room" value="3">
+                                                                    <label for="storage_room">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="elevator">Elevator</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="elevator" name="elevator" value="5">
+                                                                    <label for="elevator">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="air_conditioner">Air conditioner</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="air_conditioner" name="air_conditioner" value="6">
+                                                                    <label for="air_conditioner">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="disabled_access">Disabled access</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="disabled_access" name="disabled_access" value="7">
+                                                                    <label for="disabled_access">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label for="cellar">Cellar</label>
+                                                            </td>
+                                                            <td>
+                                                                <div class="ui toggle checkbox">
+                                                                    <input type="checkbox" id="cellar" name="cellar" value="8">
+                                                                    <label for="cellar">&nbsp;</label>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
                                                 </div>
                                             </div>
+
                                         </div>
 
                                     </div>

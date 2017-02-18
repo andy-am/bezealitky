@@ -68,3 +68,36 @@ body
   &.radio-inline label,
   &.checkbox-inline label
     color: $error
+
+
+
+
+//
+  ui checkbox
+.ui.checkbox input[type=checkbox],
+.ui.checkbox input[type=radio]
+  margin: 0
+
+.ui.toggle.checkbox label
+  padding-top: 0
+
+.ui.toggle.checkbox input:checked ~ .box:before,
+.ui.toggle.checkbox input:checked ~ label:before,
+
+.ui.toggle.checkbox input:focus:checked ~ .box:before,
+.ui.toggle.checkbox input:focus:checked ~ label:before
+
+  background-color: $primary !important
+
+
+table
+  &.options
+
+    label
+      margin: 0
+
+    td
+      text-align: left
+      vertical-align: middle !important
+    td + td
+      text-align: right
