@@ -10,9 +10,10 @@
                 <main style="padding-top: 90px">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            <div class="jumbotron">
-                                <h2>Add Flat</h2>
-                                <p>This is a template for a simple marketing or informational website.</p>
+                            <div class="jumbotron" style="background-image: url('/assets/grf/interest/img001.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; color:#fff">
+                                <h2>North star apartments by nice architects feature extruded balconies</h2>
+                                <p>slovakian architectural studio nice architects has completed a residential complex entitled ‘north star apartments’. situated in the center of senec, a popular summer resort, the development takes its name from an adjacent observatory and the building’s exact north-south orientation.</p>
+                                <a class="btn btn-primary btn-lg">Read more</a>
                             </div>
 
                             <div style="padding:30px">
