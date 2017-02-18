@@ -5809,15 +5809,15 @@ body {
 
 .btn-primary {
   color: #fff !important;
-  background-color: #1bdc56;
-  border-color: #1bdc56; }
+  background-color: #1fa67a;
+  border-color: #1fa67a; }
   .btn-primary.active, .btn-primary:active, .btn-primary.focus, .btn-primary:focus, .btn-primary.active.focus, .btn-primary:active:focus, .btn-primary.hover, .btn-primary:hover, .btn-primary.active:hover {
     color: #fff;
-    background-color: #18c64e;
-    border-color: #18c64e; }
+    background-color: #1b926c;
+    border-color: #1b926c; }
 
 .navbar-default {
-  background: #1bdc56; }
+  background: #1fa67a; }
   .navbar-default .navbar-nav > li > a {
     color: #fff; }
   .navbar-default .navbar-brand {
@@ -5829,12 +5829,27 @@ body {
   .navbar-default .navbar-nav > .active > a:hover,
   .navbar-default .navbar-nav > .active > a:focus {
     color: #fff;
-    background-color: #18c64e; }
+    background-color: #1b926c; }
   .navbar-default .navbar-nav > .open > a,
   .navbar-default .navbar-nav > .open > a:hover,
   .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
-    background-color: #18c64e; }
+    background-color: #1b926c; }
+
+.has-error .form-control {
+  border-color: #f62a7c; }
+
+.has-error .help-block,
+.has-error .control-label,
+.has-error .radio,
+.has-error .checkbox,
+.has-error .radio-inline,
+.has-error .checkbox-inline,
+.has-error.radio label,
+.has-error.checkbox label,
+.has-error.radio-inline label,
+.has-error.checkbox-inline label {
+  color: #f62a7c; }
 
 .select2-container {
   box-sizing: border-box;

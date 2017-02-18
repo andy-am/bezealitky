@@ -52,7 +52,7 @@ class ItemController extends Controller
     public function store(Request $request)
     {
         unset($request["_token"]);
-        dump($request->all());die();
+        //dump($request->all());die();
 
         $rules = [
             'offer_type' => 'required',

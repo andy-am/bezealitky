@@ -84,7 +84,7 @@ var AXFORM = {};
                         var index = index.replace(/\./g, '_'),
                             $group = $form.find('*[name="' + index + '"]').closest('.form-group');
 
-                        $group.addClass('has-error').prepend('<div class="help-block">'+ value +'</div>');
+                        $group.addClass('has-error').append('<div class="help-block">'+ value +'</div>');
 
                         console.log(index);
                         console.log(value);
@@ -94,7 +94,7 @@ var AXFORM = {};
 
                 } else if(status == 200){
 
-                    AXFORM.form._reset();
+                    AXFORM.service._reset();
                     $('#success-notification').addClass('show-up');
 
                 }
@@ -103,7 +103,7 @@ var AXFORM = {};
 
             _reset : function(){
 
-                if(AXFORM.init().grecaptcha){
+                if(AXFORM.grecaptcha){
                     grecaptcha.reset();
                 }
                 AXFORM.form.find('.help-block').remove();
