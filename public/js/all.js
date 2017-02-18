@@ -159,20 +159,20 @@ var AXFORM = {};
 
                 } else if(status == 200){
 
-                    AXFORM.service._reset();
+                    AXFORM.service._reset($form);
                     $('#success-notification').addClass('show-up');
 
                 }
 
             },
 
-            _reset : function(){
+            _reset : function(self){
 
-                if(AXFORM.grecaptcha){
+                if(this.grecaptcha){
                     grecaptcha.reset();
                 }
-                AXFORM.form.find('.help-block').remove();
-                AXFORM.form[0].reset();
+                self.find('.help-block').remove();
+                self[0].reset();
 
             }
         };

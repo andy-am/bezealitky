@@ -5836,6 +5836,9 @@ body {
     color: #fff;
     background-color: #1b926c; }
 
+.text-danger {
+  color: #f62a7c; }
+
 .has-error .form-control {
   border-color: #f62a7c; }
 
