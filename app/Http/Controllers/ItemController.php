@@ -83,6 +83,54 @@ class ItemController extends Controller
         return response()->json(["json som"], 200);
     }
 
+    public function apiGetCountries(Request $request){
+        $term = $request->get("term");
+        $term = $term["term"];
+
+        $countries = Country::where("name","LIKE", "%" . $term . "%")->get();
+
+        foreach ($countries AS $country) {
+            $result[] = [
+                'id' => $country->id,
+                'text' => $country->name
+            ];
+        }
+
+        return Response()->json(['results' => $result]);
+    }
+
+    public function apiGetCounties(Request $request){
+        $term = $request->get("term");
+        $term = $term["term"];
+
+        $counties = County::where("name","LIKE", "%" . $term . "%")->get();
+
+        foreach ($counties AS $county) {
+            $result[] = [
+                'id' => $county->id,
+                'text' => $county->name
+            ];
+        }
+
+        return Response()->json(['results' => $result]);
+    }
+
+    public function apiGetDistricts(Request $request){
+        $term = $request->get("term");
+        $term = $term["term"];
+
+        $districts = District::where("name","LIKE", "%" . $term . "%")->get();
+
+        foreach ($districts AS $district) {
+            $result[] = [
+                'id' => $district->id,
+                'text' => $district->name
+            ];
+        }
+
+        return Response()->json(['results' => $result]);
+    }
+
     public function apiGetCities(Request $request){
         $term = $request->get("term");
         $term = $term["term"];
