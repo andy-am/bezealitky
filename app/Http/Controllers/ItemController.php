@@ -89,6 +89,14 @@ class ItemController extends Controller
 
         $cities = City::where("name","LIKE", "%" . $term . "%")->get();
 
-        return Response()->json($cities);
+        foreach ($cities AS $city) {
+            $result[] = [
+                'id' => $city->id,
+                'text' => $city->name
+            ];
+        }
+        //dump($result);
+
+        return Response()->json(['results' => $cities]);
     }
 }
