@@ -97,6 +97,6 @@ class ItemController extends Controller
         }
         //dump($result);
 
-        return Response()->json(['results' => $cities]);
+        return Response()->json(['results' => $result]);
     }
 }
