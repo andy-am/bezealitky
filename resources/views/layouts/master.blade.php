@@ -35,6 +35,8 @@
 @include('partials.header')
 
 @yield('main')
+
+@include('shared.modals.login')
 <!-- Scripts -->
 <script src="/js/all.js"></script>
 </body>

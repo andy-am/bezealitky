@@ -72,12 +72,7 @@ var AXFORM = {};
 
 (function($){
 
-    AXFORM.form = $('form.ajax');
-    AXFORM.method = AXFORM.form.attr('method');
-    AXFORM.action = AXFORM.form.attr('action');
-    AXFORM.grecaptcha = AXFORM.form.attr('data-grecaptcha');
     AXFORM.token = $('meta[name="csrf-token"]').attr('content');
-
     AXFORM.service  = {
 
             /**
@@ -91,15 +86,19 @@ var AXFORM = {};
 
                 e.preventDefault();
 
+                this.method = self.attr('method');
+                this.action = self.attr('action');
+                this.grecaptcha = self.attr('data-grecaptcha');
+
                 // form serialized data
-                var data = AXFORM.token ? AXFORM.form.serialize() + '&_token=' + AXFORM.token : AXFORM.form.serialize();
+                var data = AXFORM.token ? self.serialize() + '&_token=' + AXFORM.token : self.serialize();
 
                 console.log(data);
 
                 // form ajax options
                 var options = {
-                    method: AXFORM.method,
-                    url: AXFORM.action,
+                    method: this.method,
+                    url: this.action,
                     data: data,
                     dataType: 'json'
                 };
@@ -182,18 +181,11 @@ var AXFORM = {};
          * Bind on form submit
          */
 
-        $(document).on('submit', AXFORM.form, function (e){
+        $(document).on('submit', 'form.ajax', function (e){
             AXFORM.service._submit(e, $(this));
         });
 
 
 })(jQuery);
-
-console.log(AXFORM.form);
-
-
-
-
-
 });})(jQuery);
 //# sourceMappingURL=all.js.map
