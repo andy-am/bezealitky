@@ -11,13 +11,13 @@
                     <section class="sign-in">
                         <form class="ajax" action="/signup" method="post" role="form">
                             <div class="form-group">
-                                <label for="email">Email address:</label> <input class="form-control" id="email" type="email">
+                                <label for="email">Email address:</label> <input name="email" class="form-control" id="email" type="email">
                             </div>
                             <div class="form-group">
-                                <label for="pwd">Password:</label> <input class="form-control" id="pwd" type="password">
+                                <label for="pwd">Password:</label> <input name="password" class="form-control" id="pwd" type="password">
                             </div>
                             <div class="checkbox">
-                                <label><input type="checkbox"> Remember me</label>
+                                <label><input name="remember" type="checkbox"> Remember me</label>
                             </div><button class="btn btn-primary btn-lg" type="submit">Sign In</button>
                         </form>
                     </section>

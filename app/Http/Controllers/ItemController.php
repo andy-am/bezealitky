@@ -13,8 +13,8 @@ use App\ItemKind;
 use App\ItemOffer;
 use App\Thing;
 use App\WindowType;
+use App\Zip;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 class ItemController extends Controller
@@ -40,13 +40,8 @@ class ItemController extends Controller
         $windows = WindowType::all()->sortBy("name");
         $constructions = ConstructionType::all()->sortBy("name");
         $heatings = HeatingType::all()->sortBy("name");
-        $countries = Country::all()->sortBy("name");
-        $districts = District::all()->sortBy("name");
-        $counties = County::all()->sortBy("name");
-        $cities = City::all()->sortBy("name");
         return view('item.flat-add',["kinds"=> $kinds, "offers" => $offers, "things" => $things, "windows" => $windows,
-        "heatings" => $heatings, "constructions" => $constructions, "districts" => $districts, "counties" => $counties,
-        "cities" => $cities, "countries" => $countries ] );
+        "heatings" => $heatings, "constructions" => $constructions,  ] );
     }
 
     public function store(Request $request)
@@ -71,6 +66,7 @@ class ItemController extends Controller
 
         $validator = Validator::make($request->all(), $rules);
 
+        dump($validator->errors());
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
@@ -96,7 +92,7 @@ class ItemController extends Controller
             ];
         }
 
-        return Response()->json(['results' => $result]);
+        return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
 
     public function apiGetCounties(Request $request){
@@ -112,7 +108,7 @@ class ItemController extends Controller
             ];
         }
 
-        return Response()->json(['results' => $result]);
+        return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
 
     public function apiGetDistricts(Request $request){
@@ -128,7 +124,7 @@ class ItemController extends Controller
             ];
         }
 
-        return Response()->json(['results' => $result]);
+        return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
 
     public function apiGetCities(Request $request){
@@ -145,6 +141,24 @@ class ItemController extends Controller
         }
         //dump($result);
 
-        return Response()->json(['results' => $result]);
+        return Response()->json(['results' => isset($result) ? $result : [] ]);
+    }
+
+    public function apiGetZips(Request $request){
+        $term = $request->get("term");
+        $term = $term["term"];
+
+        $zips = Zip::where("number","LIKE", "%" . $term . "%")->get();
+
+        foreach ($zips AS $zip) {
+            $city = City::find($zip->city_id);
+            $append = (!is_null($city)) ? " - " . $city->name : "" ;
+            $result[] = [
+                'id' => $zip->id,
+                'text' => $zip->number . $append
+            ];
+        }
+
+        return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
 }
