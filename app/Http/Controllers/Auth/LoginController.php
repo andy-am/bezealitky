@@ -52,11 +52,10 @@ class LoginController extends Controller
 
         $validator = Validator::make($request->all(), $rules);
 
-        //dump($validator->errors());
+
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-
 
         $credentials = [
             'email' => $request->get('email'),
@@ -65,7 +64,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return Redirect()->to('/profile/'.Auth::user()->id);
+            return Redirect()->to('/flat-add');
         }
 
         $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
@@ -76,7 +75,7 @@ class LoginController extends Controller
 
     public function logout(){
         Auth::logout();
-        return Redirect()->to("/");
+        return Redirect()->to("/flat-add");
     }
 
 }
