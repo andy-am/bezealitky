@@ -58,7 +58,6 @@ class LoginController extends Controller
 
         $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
 
-        dump($errors);
         return response()->json($errors, 422);
 
     }

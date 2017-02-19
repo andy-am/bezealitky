@@ -89,7 +89,11 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a>
+                    @if(Auth::user())
+                        <a href="{{ url("/profile/" . Auth::user()->id) }}"><i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->email }}</a>
+                    @else
+                        <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-user" aria-hidden="true"></i> Sign in</a>
+                    @endif
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars" aria-hidden="true"></i> Menu<strong class="caret"></strong></a>
