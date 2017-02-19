@@ -15,8 +15,28 @@
                                 <p>slovakian architectural studio nice architects has completed a residential complex entitled ‘north star apartments’. situated in the center of senec, a popular summer resort, the development takes its name from an adjacent observatory and the building’s exact north-south orientation.</p>
                                 <a class="btn btn-primary btn-lg">Read more</a>
                             </div>
-
                             <div style="padding:30px">
+
+                                <div class="nav-tabs-center">
+
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Flats</a></li>
+                                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Houses</a></li>
+                                        <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Objects</a></li>
+                                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Land</a></li>
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="home">...</div>
+                                        <div role="tabpanel" class="tab-pane" id="profile">...</div>
+                                        <div role="tabpanel" class="tab-pane" id="messages">...</div>
+                                        <div role="tabpanel" class="tab-pane" id="settings">...</div>
+                                    </div>
+
+                                </div>
+
                                 <form action="/flat-add" class="ajax" method="post" role="form">
                                     <div class="page-header text-center" style="margin: 0 0 20px">
                                         <h3>Basics</h3>

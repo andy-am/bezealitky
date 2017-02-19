@@ -8966,4 +8966,11 @@ div#loader {
   z-index: 9999;
 }
 
+.nav-tabs-center .nav-tabs {
+  text-align: center; }
+
+.nav-tabs-center .nav-tabs > li {
+  float: none;
+  display: inline-block; }
+
 /*# sourceMappingURL=app.css.map */
