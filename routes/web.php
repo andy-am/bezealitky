@@ -18,10 +18,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('/index', 'TemplateController@index');
+
 Route::post('/signup', 'Auth\LoginController@signUp');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/profile/{id}', 'UserController@profile');
 

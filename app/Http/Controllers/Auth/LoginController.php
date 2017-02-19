@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\MessageBag;
 use Symfony\Component\Console\Input\Input;
 
@@ -31,7 +32,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -62,5 +63,8 @@ class LoginController extends Controller
 
     }
 
+    public function logout(){
+        //Auth::logout();
+    }
 
 }
