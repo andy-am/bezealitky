@@ -66,15 +66,9 @@ class ItemController extends Controller
 
         $validator = Validator::make($request->all(), $rules);
 
-        dump($validator->errors());
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
-
-
-        //Item::create([]);
-        dump($request->all());
-
 
         return response()->json(["json som"], 200);
     }
@@ -139,7 +133,6 @@ class ItemController extends Controller
                 'text' => $city->name
             ];
         }
-        //dump($result);
 
         return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
