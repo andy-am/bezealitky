@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\MessageBag;
+use Symfony\Component\Console\Input\Input;
 
 class LoginController extends Controller
 {
@@ -36,4 +42,25 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+    public function signUp(Request $request)
+    {
+        dump($request->all());
+
+        $credentials = [
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            //'remember' => $request->get('remember'),
+        ];
+
+        if (Auth::attempt($credentials)) {
+            return Redirect()->to('/profile');//->with('alert-success', 'You are now logged in.');
+        }
+
+        $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
+
+        return Response()->json($errors, 401);
+    }
+
+
 }

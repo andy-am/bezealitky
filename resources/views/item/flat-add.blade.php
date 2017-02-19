@@ -251,12 +251,8 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="county_id">County <span class="text-danger">*</span></label> <select class="form-control select2" placeholder="test" id="county_id" name="county_id" data-placeholder="Select an option">
-                                                        {{--
-                                                        @foreach($counties as $county)
-                                                            <option value="{{$county->id}}">{{$county->name}}</option>
-                                                        @endforeach
-                                                        --}}
+                                                    <label for="county_id">County <span class="text-danger">*</span></label>
+                                                    <select class="form-control select2" placeholder="test" id="county_id" name="county_id" data-placeholder="Select an option">
                                                     </select>
                                                 </div>
                                             </div>
@@ -264,11 +260,6 @@
                                                 <div class="form-group">
                                                     <label for="district_id">District <span class="text-danger">*</span></label>
                                                     <select class="form-control select2" id="district_id" name="district_id" data-placeholder="Select an option">
-                                                        {{--
-                                                        @foreach($districts as $district)
-                                                            <option value="{{$district->id}}">{{$district->name}}</option>
-                                                        @endforeach
-                                                        --}}
                                                     </select>
                                                 </div>
                                             </div>
@@ -276,28 +267,21 @@
                                                 <div class="form-group">
                                                     <label for="city">City <span class="text-danger">*</span></label>
                                                     <select class="form-control" id="city_id" name="city_id" data-placeholder="Select an option">
-                                                        {{--
-                                                        @foreach($cities as $city)
-                                                            <option value="{{$city->id}}">{{$city->name}}</option>
-                                                        @endforeach
-                                                        --}}
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="zip">ZIP <span class="text-danger">*</span></label> <input class="form-control" id="zip" name="zip" type="text">
+                                                    <label for="zip">ZIP <span class="text-danger">*</span></label>
+                                                    <select class="form-control" id="zip_id" name="zip_id" data-placeholder="Zip">
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label for="country">Country <span class="text-danger">*</span></label>
-                                            <select class="form-control" id="country" name="country">
-                                                @foreach($countries as $country)
-                                                    <option value="{{$country->id}}">{{$country->name}}</option>
-                                                @endforeach
-                                            </select>
+                                            <select class="form-control" id="country_id" name="country" data-placeholder="Select an option"></select>
                                         </div>
 
                                     <div class="page-header text-center" style="margin: 0 0 20px">

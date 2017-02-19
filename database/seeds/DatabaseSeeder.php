@@ -120,8 +120,6 @@ class DatabaseSeeder extends Seeder
 
         dump("ZIP IS DONE!");
 
-
-
         dump("-----ALL IS DONE-----");
 
     }

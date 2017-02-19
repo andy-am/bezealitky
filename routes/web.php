@@ -21,7 +21,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::get('/index', 'TemplateController@index');
-Route::get('/signup', 'TemplateController@signUp');
+Route::post('/signup', 'Auth\LoginController@signUp');
 
 Route::get('/profile/{id}', 'UserController@profile');
 
@@ -34,6 +34,11 @@ Route::get('/flat-add', 'ItemController@create');
 Route::post('/flat-add', 'ItemController@store');
 
 
-//api
 
+
+//api
+Route::get('/api/get-countries', 'ItemController@apiGetCountries');
+Route::get('/api/get-counties', 'ItemController@apiGetCounties');
+Route::get('/api/get-districts', 'ItemController@apiGetDistricts');
 Route::get('/api/get-cities', 'ItemController@apiGetCities');
+Route::get('/api/get-zips', 'ItemController@apiGetZips');
