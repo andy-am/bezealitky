@@ -45,7 +45,6 @@ class LoginController extends Controller
 
     public function signUp(Request $request)
     {
-        dump($request->all());
 
         $credentials = [
             'email' => $request->get('email'),
@@ -59,7 +58,9 @@ class LoginController extends Controller
 
         $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
 
-        return Response()->json($errors, 401);
+        dump($errors);
+        return response()->json($errors, 422);
+
     }
 
 

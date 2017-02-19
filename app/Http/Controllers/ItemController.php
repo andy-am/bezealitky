@@ -15,7 +15,6 @@ use App\Thing;
 use App\WindowType;
 use App\Zip;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 
 class ItemController extends Controller
@@ -67,6 +66,7 @@ class ItemController extends Controller
 
         $validator = Validator::make($request->all(), $rules);
 
+        dump($validator->errors());
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
