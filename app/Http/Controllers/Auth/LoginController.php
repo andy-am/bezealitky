@@ -65,7 +65,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return Redirect()->to('/profile');
+            return Redirect()->to('/profile/'.Auth::user()->id);
         }
 
         $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
