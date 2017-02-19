@@ -68,7 +68,7 @@
             </form>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i> Notifications<strong class="caret"></strong></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><strong class="caret"></strong></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#">Action</a>
@@ -88,6 +88,9 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Add Flat</a>
+                </li>
                 <li>
                     @if(Auth::user())
                         <a href="{{ url("/profile/" . Auth::user()->id) }}"><i class="fa fa-user" aria-hidden="true"></i> {{ Auth::user()->email }}</a>
