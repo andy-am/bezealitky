@@ -156,7 +156,7 @@ class DatabaseSeeder extends Seeder
 
     public static function seedCountries(){
 
-        $countriesCsv = base_path() . "/public/obce_2csv.csv";
+        $countriesCsv = base_path() . "/public/countries.csv";
 
         $hnd = fopen($countriesCsv, 'r');
 
@@ -164,7 +164,7 @@ class DatabaseSeeder extends Seeder
             die('Cannot open import file');
         }
 
-        while ($row = fgetcsv($hnd, 0, "\t")) {
+        while ($row = fgetcsv($hnd, 0, ",")) {
             $country = ($row[0]); // country
             Country::create(["name" => $country, "slug"=>Str::slug($country)]);
         }

@@ -142,7 +142,7 @@ APP.init = (function($) {
 
         $("#city_id").select2({
             minimumInputLength: 2,
-            tags: [],
+            selectOnClose: true,
             ajax: {
                 url: "api/get-cities",
                 dataType: 'json',
@@ -171,9 +171,9 @@ APP.init = (function($) {
             }
         });
 
+
         $("#zip_id").select2({
             minimumInputLength: 1,
-            tags: [],
             ajax: {
                 url: "api/get-zips",
                 dataType: 'json',
@@ -205,6 +205,58 @@ APP.init = (function($) {
 
     });
 
+
+    $('#city_id').on("select2:select", function(e) {
+
+        var city_id = $(this).val();
+
+        $.ajax({
+            method: "GET",
+            url: "api/get-district-by-city/" + city_id,
+            dataType: "json"
+        }).done(function( res ) {
+            $("#district_id").select2("trigger", "select", {
+                data: { id: res.id, text: res.name }
+            });
+
+
+        });
+
+    });
+
+    $('#district_id').on("select2:select", function(e) {
+
+        var district_id = $(this).val();
+
+        $.ajax({
+            method: "GET",
+            url: "api/get-county-by-district/" + district_id,
+            dataType: "json"
+        }).done(function( res ) {
+            $("#county_id").select2("trigger", "select", {
+                data: { id: res.id, text: res.name }
+            });
+
+        });
+
+    });
+
+    $('#county_id').on("select2:select", function(e) {
+
+        var county_id = $(this).val();
+
+        $.ajax({
+            method: "GET",
+            url: "api/get-country-by-county/" + county_id,
+            dataType: "json"
+        }).done(function( res ) {
+            $("#country_id").select2("trigger", "select", {
+                data: { id: res.id, text: res.name }
+            });
+
+        });
+
+    });
 
     $(function(){
         $("input.spin-m2").TouchSpin({

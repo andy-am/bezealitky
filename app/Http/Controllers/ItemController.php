@@ -154,4 +154,31 @@ class ItemController extends Controller
 
         return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
+
+    public function apiGetDistrictByCity($id){
+
+        $district_id = City::find($id)->district_id;
+
+        $district = District::find($district_id);
+
+        return Response()->json( ["id"=> $district->id, "name"=> $district->name] );
+    }
+
+    public function apiGetCountyByDistrict($id){
+
+        $county_id = District::find($id)->county_id;
+
+        $county = County::find($county_id);
+
+        return Response()->json( ["id"=> $county->id, "name"=> $county->name] );
+    }
+
+    public function apiGetCountryByCounty($id){
+
+        $country_id = County::find($id)->country_id;
+
+        $country = Country::find($country_id);
+
+        return Response()->json( ["id"=> $country->id, "name"=> $country->name] );
+    }
 }
