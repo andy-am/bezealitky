@@ -13,7 +13,6 @@ APP.init = (function($) {
 
         $("#country_id").select2({
             minimumInputLength: 2,
-            tags: [],
             ajax: {
                 url: "api/get-countries",
                 dataType: 'json',
@@ -45,7 +44,6 @@ APP.init = (function($) {
 
         $("#county_id").select2({
             minimumInputLength: 2,
-            tags: [],
             ajax: {
                 url: "api/get-counties",
                 dataType: 'json',
@@ -78,7 +76,6 @@ APP.init = (function($) {
 
         $("#district_id").select2({
             minimumInputLength: 2,
-            tags: [],
             ajax: {
                 url: "api/get-districts",
                 dataType: 'json',
