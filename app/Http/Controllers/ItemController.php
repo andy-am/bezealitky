@@ -94,8 +94,9 @@ class ItemController extends Controller
     public function apiGetCounties(Request $request){
         $term = $request->get("term");
         $term = $term["term"];
+        $country_id = $request->get("country");
 
-        $counties = County::where("name","LIKE", "%" . $term . "%")->get();
+        $counties = County::where("name","LIKE", "%" . $term . "%")->where("country_id", $country_id)->get();
 
         foreach ($counties AS $county) {
             $result[] = [
@@ -110,8 +111,9 @@ class ItemController extends Controller
     public function apiGetDistricts(Request $request){
         $term = $request->get("term");
         $term = $term["term"];
+        $county_id = $request->get("county");
 
-        $districts = District::where("name","LIKE", "%" . $term . "%")->get();
+        $districts = District::where("name","LIKE", "%" . $term . "%")->where("county_id", $county_id)->get();
 
         foreach ($districts AS $district) {
             $result[] = [
@@ -126,8 +128,9 @@ class ItemController extends Controller
     public function apiGetCities(Request $request){
         $term = $request->get("term");
         $term = $term["term"];
+        $district_id = $request->get("district");
 
-        $cities = City::where("name","LIKE", "%" . $term . "%")->get();
+        $cities = City::where("name","LIKE", "%" . $term . "%")->where("district_id", $district_id)->get();
 
         foreach ($cities AS $city) {
             $result[] = [
@@ -142,10 +145,10 @@ class ItemController extends Controller
     public function apiGetStreets(Request $request){
         $term = $request->get("term");
         $term = $term["term"];
+        $city_id = $request->get("city");
+        //dump($city_id);
 
-
-
-        $streets = Street::where("name","LIKE", "%" . $term . "%")->get();
+        $streets = Street::where("name","LIKE", "%" . $term . "%")->where("city_id", $city_id)->get();
 
         foreach ($streets AS $street) {
             $city = City::find($street->city_id);

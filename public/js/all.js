@@ -89,6 +89,7 @@ APP.init = (function($) {
                 allowClear: true,
                 data: function (term) {
                     return {
+                        country: $("#country_id").val(),
                         term: term
                     };
                 },
@@ -121,6 +122,7 @@ APP.init = (function($) {
                 allowClear: true,
                 data: function (term) {
                     return {
+                        county: $("#county_id").val(),
                         term: term
                     };
                 },
@@ -152,6 +154,7 @@ APP.init = (function($) {
                 allowClear: true,
                 data: function (term) {
                     return {
+                        district: $("#district_id").val(),
                         term: term
                     };
                 },
@@ -184,6 +187,7 @@ APP.init = (function($) {
                 allowClear: true,
                 data: function (term) {
                     return {
+                        city: $("#city_id").val(),
                         term: term
                     };
                 },
@@ -250,7 +254,6 @@ APP.init = (function($) {
             $("#city_id").select2("trigger", "select", {
                 data: { id: res.id, text: res.name }
             });
-
 
         });
 

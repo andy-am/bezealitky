@@ -265,8 +265,6 @@ class DatabaseSeeder extends Seeder
             $streetName = $row[0];
             $citySlug = Str::slug($row[3]);
 
-
-
             $slug = Str::slug($streetName);
 
                 Street::create(["name" => $streetName, "slug" => $slug, "zip" => $zip, "city_id" => self::getCityId($citySlug)]);
