@@ -44,37 +44,6 @@ APP.init = (function($) {
 
     $(function(){
 
-        $("#zip_id").select2({
-            minimumInputLength: 1,
-            tags: [],
-            ajax: {
-                url: "api/get-zips",
-                dataType: 'json',
-                type: "GET",
-                quietMillis: 50,
-                placeholder: $(this).data('placeholder'),
-                allowClear: true,
-                data: function (term) {
-                    return {
-                        term: term
-                    };
-                },
-                results: function (data) {
-                    console.log(data);
-                    return {
-                        results: $.map(data, function (item) {
-                            console.log(item);
-                            return {
-                                text: item.number,
-                                id: item.id
-                            }
-                        })
-
-                    };
-                }
-            }
-        });
-
 
         $("#country_id").select2({
             minimumInputLength: 2,
@@ -202,7 +171,36 @@ APP.init = (function($) {
             }
         });
 
+        $("#zip_id").select2({
+            minimumInputLength: 1,
+            tags: [],
+            ajax: {
+                url: "api/get-zips",
+                dataType: 'json',
+                type: "GET",
+                quietMillis: 50,
+                placeholder: $(this).data('placeholder'),
+                allowClear: true,
+                data: function (term) {
+                    return {
+                        term: term
+                    };
+                },
+                results: function (data) {
+                    console.log(data);
+                    return {
+                        results: $.map(data, function (item) {
+                            console.log(item);
+                            return {
+                                text: item.number,
+                                id: item.id
+                            }
+                        })
 
+                    };
+                }
+            }
+        });
 
 
     });

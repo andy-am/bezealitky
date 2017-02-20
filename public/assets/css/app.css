@@ -8967,10 +8967,12 @@ div#loader {
 }
 
 .nav-tabs-center .nav-tabs {
-  text-align: center; }
+  text-align: center;
+}
 
 .nav-tabs-center .nav-tabs > li {
   float: none;
-  display: inline-block; }
+  display: inline-block;
+}
 
 /*# sourceMappingURL=app.css.map */

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountiesTable extends Migration
+class CreateStreetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateCountiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('counties', function (Blueprint $table) {
+        Schema::create('streets', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->unsignedInteger('country_id');
-            $table->string("code",2);
-            $table->text('description')->nullable();
+            $table->unsignedInteger('city_id');
+            $table->string('zip');
             $table->boolean('active')->default(TRUE);
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('no action');
+            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('cascade')->onDelete('no action');
+
 
         });
     }
@@ -35,6 +35,6 @@ class CreateCountiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('counties');
+        Schema::drop('streets');
     }
 }

@@ -17,6 +17,7 @@ class CreateZipsTable extends Migration
             $table->increments('id');
             $table->string('number');
             $table->unsignedInteger('city_id');
+            $table->text('description')->nullable();
             $table->boolean('active')->default(TRUE);
             $table->softDeletes();
             $table->timestamps();
@@ -25,13 +26,9 @@ class CreateZipsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::drop('zips');
     }
+
 }

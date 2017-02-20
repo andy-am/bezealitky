@@ -7,32 +7,14 @@ use Illuminate\Notifications\Notifiable;
 
 class Street extends Model
 {
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = [ "name", "slug", "city_id", "zip"];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
 
-    public function favourites(){
-        return $this->belongsToMany('App\Item', 'favourites');
-    }
-
-    public function myOffers(){
-        return $this->hasMany('App\Item', 'creator_id');
-    }
 
 }
