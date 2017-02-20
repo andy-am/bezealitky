@@ -172,6 +172,38 @@ APP.init = (function($) {
         });
 
 
+        $("#street_id").select2({
+            minimumInputLength: 2,
+            selectOnClose: true,
+            ajax: {
+                url: "api/get-streets",
+                dataType: 'json',
+                type: "GET",
+                quietMillis: 50,
+                placeholder: $(this).data('placeholder'),
+                allowClear: true,
+                data: function (term) {
+                    return {
+                        term: term
+                    };
+                },
+                results: function (data) {
+                    console.log(data);
+                    return {
+                        results: $.map(data, function (item) {
+                            console.log(item);
+                            return {
+                                text: item.name,
+                                id: item.id
+                            }
+                        })
+
+                    };
+                }
+            }
+        });
+
+
         $("#zip_id").select2({
             minimumInputLength: 1,
             ajax: {
@@ -202,6 +234,25 @@ APP.init = (function($) {
             }
         });
 
+
+    });
+
+
+    $('#street_id').on("select2:select", function(e) {
+
+        var street_id = $(this).val();
+
+        $.ajax({
+            method: "GET",
+            url: "api/get-city-by-street/" + street_id,
+            dataType: "json"
+        }).done(function( res ) {
+            $("#city_id").select2("trigger", "select", {
+                data: { id: res.id, text: res.name }
+            });
+
+
+        });
 
     });
 

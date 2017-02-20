@@ -258,7 +258,9 @@
                                         <div class="row">
                                             <div class="col-md-9">
                                                 <div class="form-group">
-                                                    <label for="street">Street <span class="text-danger">*</span></label> <input class="form-control" id="street" name="street" type="text">
+                                                    <label for="street">Street <span class="text-danger">*</span></label>
+                                                    <select class="form-control select2" id="street_id" name="street_id" data-placeholder="Select an option">
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-3">

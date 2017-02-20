@@ -11,11 +11,13 @@ use App\HeatingType;
 use App\Item;
 use App\ItemKind;
 use App\ItemOffer;
+use App\Street;
 use App\Thing;
 use App\WindowType;
 use App\Zip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Psy\Util\Str;
 
 class ItemController extends Controller
 {
@@ -137,6 +139,26 @@ class ItemController extends Controller
         return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
 
+    public function apiGetStreets(Request $request){
+        $term = $request->get("term");
+        $term = $term["term"];
+
+
+
+        $streets = Street::where("name","LIKE", "%" . $term . "%")->get();
+
+        foreach ($streets AS $street) {
+            $city = City::find($street->city_id);
+            $append = (!is_null($city)) ? " - " . $city->name : "" ;
+            $result[] = [
+                'id' => $street->id,
+                'text' => $street->name . $append
+            ];
+        }
+
+        return Response()->json(['results' => isset($result) ? $result : [] ]);
+    }
+
     public function apiGetZips(Request $request){
         $term = $request->get("term");
         $term = $term["term"];
@@ -154,6 +176,17 @@ class ItemController extends Controller
 
         return Response()->json(['results' => isset($result) ? $result : [] ]);
     }
+
+
+    public function apiGetCityByStreet($id){
+
+        $city_id = Street::find($id)->city_id;
+
+        $city = City::find($city_id);
+
+        return Response()->json( ["id"=> $city->id, "name"=> $city->name] );
+    }
+
 
     public function apiGetDistrictByCity($id){
 
