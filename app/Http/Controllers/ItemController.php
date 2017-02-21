@@ -16,6 +16,7 @@ use App\Thing;
 use App\WindowType;
 use App\Zip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Psy\Util\Str;
 
@@ -26,6 +27,10 @@ class ItemController extends Controller
      */
     public function detail($id)
     {
+        //dump(Auth::user()->getBrowserNotifications()->count() );
+        if(!Auth::user()){
+            dump(Auth::user()->getBrowserNotifications() );
+        }
         $flat = Item::find($id);
         //dump($flat);die();
 

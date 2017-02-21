@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->boolean('is_user')->default(TRUE);
+            $table->enum("gender", ["Muž", "Žena"])->nullable();
             $table->string('pre_title')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();

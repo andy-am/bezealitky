@@ -32,8 +32,8 @@ class AccountSeeder extends Seeder
         ]);
 
         DB::table('account_types')->insert([
-            'name' => "Fee-paying",
-            'slug' => "fee-paying",
+            'name' => "Fre-paying",
+            'slug' => "fre-paying",
             'description' => "desc"
         ]);
 

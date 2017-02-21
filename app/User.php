@@ -35,4 +35,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Item', 'creator_id');
     }
 
+    public function getBrowserNotifications(){
+        return $this->hasMany('App\Notification', 'user_id');
+    }
+
 }
