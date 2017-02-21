@@ -9,7 +9,7 @@
             <div class="modal-body">
                 <div class="col-md-7">
                     <section class="sign-in">
-                        <form class="ajax" action="/signup" method="post" role="form">
+                        <form class="ajax" action="/signup" method="post" role="form" data-done="reload">
                             <div class="form-group">
                                 <label for="email">Email address:</label> <input name="email" class="form-control" id="email" type="email">
                             </div>

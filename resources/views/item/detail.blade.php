@@ -136,7 +136,7 @@
                                         </table>
 
                                         <div class="btn-group btn-group-md pull-left" style="margin-right: 15px">
-
+                                            <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.gallery")" class="btn btn-default"><i class="fa fa-heart" aria-hidden="true"></i></button>
                                             <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.gallery")" class="btn btn-default"><i class="fa fa-picture-o" aria-hidden="true"></i></button>
                                             <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.neviem")" class="btn btn-default"><i class="fa fa-map-marker" aria-hidden="true"></i></button>
                                             <button data-toggle="tooltip" type="button" title="@Lang("detail.buttons.titles.print")" class="btn btn-default"><i class="fa fa-print" aria-hidden="true"></i></button>

@@ -13,7 +13,26 @@
                         <div class="col-md-10 col-md-offset-1">
 
                             <div>
-                                <form role="form">
+
+                                <div class="jumbotron text-center" style="background-image: url('/assets/grf/profile/img001.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; color:#fff">
+                                    <button class="btn btn-primary btn-xs" style="position: absolute; top: 20px; right: 35px;"><i class="fa fa-plus" aria-hidden="true"></i> Follow</button>
+                                    <div>
+                                        <img style="width: 150px; height: 150px" class="img-circle" src="https://pbs.twimg.com/profile_images/715755910732378112/vDqNKjCk.jpg">
+                                    </div>
+                                    <h2>
+                                        {{ $user->first_name }} {{ $user->last_name }}
+                                    </h2>
+                                    <p style="font-size: 13px">
+                                        {{--This is a template for a simple marketing or informational website.--}}
+                                        {{ $user->about_me }}
+                                    </p>
+                                    <hr>
+                                    <div>
+                                        <h2><i class="fa fa-mobile" aria-hidden="true"></i></h2>
+                                        @if($user->phone ) +421{{ $user->phone }} @else N/A @endif
+                                    </div>
+                                </div>
+
                                     <div class="row">
                                         <div class="col-md-6">
 
@@ -86,24 +105,7 @@
 
                                         <div class="col-md-6">
 
-                                            <div class="jumbotron text-center">
-                                                <button class="btn btn-primary btn-xs" style="position: absolute; top: 20px; right: 35px;"><i class="fa fa-plus" aria-hidden="true"></i> Follow</button>
-                                                <div>
-                                                    <img style="width: 150px; height: 150px" class="img-circle" src="https://pbs.twimg.com/profile_images/715755910732378112/vDqNKjCk.jpg">
-                                                </div>
-                                                <h2>
-                                                    {{ $user->first_name }} {{ $user->last_name }}
-                                                </h2>
-                                                <p>
-                                                    {{--This is a template for a simple marketing or informational website.--}}
-                                                    {{ $user->about_me }}
-                                                </p>
-                                                <hr>
-                                                <div>
-                                                    <h2><i class="fa fa-mobile" aria-hidden="true"></i></h2>
-                                                   @if($user->phone ) {{ $user->phone }} @else N/A @endif
-                                                </div>
-                                            </div>
+
 
                                             <div>
                                                 <h4 class="text-center">
@@ -138,7 +140,6 @@
                                         </div>
                                     </div>
 
-                                </form>
                             </div>
 
                         </div>

@@ -56,12 +56,12 @@ var AXFORM = {};
             /**
              * Validate method
              *
-             * @param $form
+             * @param self
              * @param response
              * @private
              */
 
-            _validate: function ($form, response) {
+            _validate: function (self, response) {
 
                 var status = response.status;
                 var $group = $('.form-group');
@@ -75,13 +75,13 @@ var AXFORM = {};
 
                     // reset validate messages
                     $group.removeClass('has-error');
-                    $form.find('.help-block').remove();
+                    self.find('.help-block').remove();
 
                     // fill validate messages
                     $.each(messages, function (index, value) {
 
                         var index = index.replace(/\./g, '_'),
-                            $group = $form.find('*[name="' + index + '"]').closest('.form-group');
+                            $group = self.find('*[name="' + index + '"]').closest('.form-group');
 
                         $group.addClass('has-error').append('<div class="help-block">'+ value +'</div>');
 
@@ -93,8 +93,8 @@ var AXFORM = {};
 
                 } else if(status == 200){
 
-                    AXFORM.service._reset($form);
-                    $('#success-notification').addClass('show-up');
+                    AXFORM.service._reset(self);
+                    AXFORM.service._done(self);
 
                 }
 
@@ -107,6 +107,21 @@ var AXFORM = {};
                 }
                 self.find('.help-block').remove();
                 self[0].reset();
+
+            },
+
+            _done: function(self){
+                var done = self.attr('data-done');
+
+                if (done){
+                    switch(done) {
+                        case "reload":
+                            location.reload();
+                            break;
+                        default:
+                            void(0);
+                    }
+                }
 
             }
         };
