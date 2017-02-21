@@ -6763,7 +6763,11 @@ body {
     border-color: #1b926c; }
 
 .navbar-default {
-  background: #1fa67a; }
+  background: #1fa67a;
+  border: none; }
+  .navbar-default .navbar-form input[type="text"],
+  .navbar-default .navbar-form .btn {
+    border: none; }
   .navbar-default .navbar-nav > li > a {
     color: #fff; }
   .navbar-default .navbar-brand {
@@ -6844,5 +6848,34 @@ div#loader {
 .nav-tabs-center .nav-tabs > li {
   float: none;
   display: inline-block; }
+
+body.homepage {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/assets/grf/homepage/img001.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0px 82px 100px -45px rgba(0, 0, 0, 0.35); }
+  body.homepage .navbar-default {
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    border-radius: 0; }
+    body.homepage .navbar-default .navbar-form {
+      display: none; }
+  body.homepage .center-box {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%); }
+  body.homepage .center-box {
+    color: #fff;
+    text-align: center; }
+  body.homepage h1 {
+    font-size: 4.5vw; }
+    body.homepage h1 span {
+      font-size: 9.5vw;
+      font-family: 'Titillium Web', sans-serif; }
 
 /*# sourceMappingURL=app.css.map */
