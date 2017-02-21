@@ -67,8 +67,8 @@
                 </button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><strong class="caret"></strong></a>
+                <li class="dropdown notifications">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge">1</span><strong class="caret"></strong></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#">Action</a>

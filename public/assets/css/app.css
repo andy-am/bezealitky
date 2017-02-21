@@ -6785,6 +6785,8 @@ body {
   .navbar-default .navbar-nav > .open > a:focus {
     color: #fff;
     background-color: #1b926c; }
+  .navbar-default .navbar-nav li.notifications .badge {
+    background-color: #69cce4; }
 
 .text-danger {
   color: #f62a7c; }
