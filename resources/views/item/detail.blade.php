@@ -3,6 +3,7 @@
 @section('title', 'Sign Up')
 @section('bodyClass', 'signup')
     <script>
+        /*
         var infowindow;
 
         function initMap() {
@@ -68,17 +69,13 @@
                 infowindow.open(map, this);
             });
         }
-
-        $(function(){
-            $('.datepicker').datepicker();
-        });
-
+        */
     </script>
-
+<!--
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpGNygl1bhboNRXZE6D6b32P_EiN5-rUs&libraries=places&callback=initMap"
             async defer>
     </script>
-
+-->
 @section('main')
     <div class="container-fluid">
         <div class="row">
@@ -232,14 +229,37 @@
                     <h4 class="modal-title">Modal Header</h4>
                 </div>
                 <div class="modal-body">
-                    <!-- datepicker start -->
-                    <div class="input-group date" data-provide="datepicker">
-                        <input type="text" class="form-control">
-                        <div class="input-group-addon">
-                            <span class="glyphicon glyphicon-th"></span>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- datepicker end -->
+
+                    <div class="container">
+                        <div class="row">
+                            <div class='col-sm-6'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker3'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-time"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

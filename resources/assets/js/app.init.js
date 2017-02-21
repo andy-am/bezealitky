@@ -295,5 +295,31 @@ APP.init = (function($) {
         $('#loader').fadeOut(1500);
     });
 
+    $(function () {
+        $('#datetimepicker3').datetimepicker({
+            format: 'LT',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down"
+            },
+            stepping: 15
+        });
+    });
+
+    $(function () {
+        $('#datetimepicker1').datetimepicker({
+            locale: 'sk',
+            format: 'DD.MM.YYYY',
+            icons: {
+                time: "fa fa-clock-o",
+                date: "fa fa-calendar",
+                up: "fa fa-arrow-up",
+                down: "fa fa-arrow-down"
+            }
+        });
+    });
+
 }(jQuery));
 

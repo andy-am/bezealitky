@@ -18,7 +18,9 @@ elixir(function(mix) {
         '../bower_components/select2/dist/js/select2.full.min.js',
         '../bower_components/semantic-ui-checkbox/checkbox.min.js',
         '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
-        '../bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js',
+        '../bower_components/moment/min/moment.min.js',
+        '../bower_components/moment/locale/sk.js',
+        '../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 
             'app.init.js',
             'form.js',
@@ -29,7 +31,7 @@ elixir(function(mix) {
         '../bower_components/select2/dist/css/select2.min.css',
         '../bower_components/semantic-ui-checkbox/checkbox.min.css',
         '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
-        '../bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css',
+        '../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         'app.scss',
     ], 'public/assets/css');
 
