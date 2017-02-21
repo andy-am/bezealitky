@@ -27,7 +27,7 @@ class ItemController extends Controller
      */
     public function detail($id)
     {
-        //dump(Auth::user()->getBrowserNotifications()->count() );
+        
         if(!Auth::user()){
             dump(Auth::user()->getBrowserNotifications() );
         }

@@ -66,27 +66,29 @@
                     Search
                 </button>
             </form>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown notifications">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge">13</span><strong class="caret"></strong></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#">Action</a>
-                        </li>
-                        <li>
-                            <a href="#">Another action</a>
-                        </li>
-                        <li>
-                            <a href="#">Something else here</a>
-                        </li>
-                        <li class="divider">
-                        </li>
-                        <li>
-                            <a href="#">Separated link</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+            @if(Auth::user())
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown notifications">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell" aria-hidden="true"></i><span class="badge">{{ Auth::user()->getBrowserNotifications()->count() }}</span><strong class="caret"></strong></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Another action</a>
+                            </li>
+                            <li>
+                                <a href="#">Something else here</a>
+                            </li>
+                            <li class="divider">
+                            </li>
+                            <li>
+                                <a href="#">Separated link</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            @endif
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="/flat-add"><i class="fa fa-plus" aria-hidden="true"></i> Add Flat</a>
