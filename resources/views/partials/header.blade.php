@@ -89,7 +89,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#"><i class="fa fa-plus" aria-hidden="true"></i> Add Flat</a>
+                    <a href="/flat-add"><i class="fa fa-plus" aria-hidden="true"></i> Add Flat</a>
                 </li>
                 <li>
                     @if(Auth::user())

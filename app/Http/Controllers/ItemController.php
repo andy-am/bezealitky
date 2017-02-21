@@ -42,6 +42,7 @@ class ItemController extends Controller
         $windows = WindowType::all()->sortBy("name");
         $constructions = ConstructionType::all()->sortBy("name");
         $heatings = HeatingType::all()->sortBy("name");
+
         return view('item.flat-add',["kinds"=> $kinds, "offers" => $offers, "things" => $things, "windows" => $windows,
         "heatings" => $heatings, "constructions" => $constructions,  ] );
     }
@@ -81,7 +82,7 @@ class ItemController extends Controller
 
         $countries = Country::where("name","LIKE", "%" . $term . "%")->get();
 
-        foreach ($countries AS $country) {
+        foreach ($countries as $country) {
             $result[] = [
                 'id' => $country->id,
                 'text' => $country->name
@@ -102,7 +103,7 @@ class ItemController extends Controller
             $counties = County::where("name","LIKE", "%" . $term . "%")->get();
         }
 
-        foreach ($counties AS $county) {
+        foreach ($counties as $county) {
             $result[] = [
                 'id' => $county->id,
                 'text' => $county->name
@@ -123,7 +124,7 @@ class ItemController extends Controller
             $districts = District::where("name","LIKE", "%" . $term . "%")->get();
         }
 
-        foreach ($districts AS $district) {
+        foreach ($districts as $district) {
             $result[] = [
                 'id' => $district->id,
                 'text' => $district->name
@@ -144,7 +145,7 @@ class ItemController extends Controller
             $cities = City::where("name","LIKE", "%" . $term . "%")->get();
         }
 
-        foreach ($cities AS $city) {
+        foreach ($cities as $city) {
             $result[] = [
                 'id' => $city->id,
                 'text' => $city->name
@@ -165,7 +166,7 @@ class ItemController extends Controller
             $streets = Street::where("name","LIKE", "%" . $term . "%")->get();
         }
 
-        foreach ($streets AS $street) {
+        foreach ($streets as $street) {
             $city = City::find($street->city_id);
             $append = (!is_null($city)) ? " - " . $city->name : "" ;
             $result[] = [
@@ -183,7 +184,7 @@ class ItemController extends Controller
 
         $zips = Zip::where("number","LIKE", "%" . $term . "%")->get();
 
-        foreach ($zips AS $zip) {
+        foreach ($zips as $zip) {
             $city = City::find($zip->city_id);
             $append = (!is_null($city)) ? " - " . $city->name : "" ;
             $result[] = [

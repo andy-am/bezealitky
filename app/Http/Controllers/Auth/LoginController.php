@@ -36,10 +36,10 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
-    }
+    }*/
 
     public function signUp(Request $request)
     {
@@ -64,7 +64,7 @@ class LoginController extends Controller
         ];
 
         if (Auth::attempt($credentials)) {
-            return Redirect()->to('/flat-add');
+            return response()->json([], 200);
         }
 
         $errors = new MessageBag(['password' => ['Email and/or password invalid.']]);
