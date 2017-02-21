@@ -69,6 +69,10 @@
             });
         }
 
+        $(function(){
+            $('.datepicker').datepicker();
+        });
+
     </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpGNygl1bhboNRXZE6D6b32P_EiN5-rUs&libraries=places&callback=initMap"
@@ -86,6 +90,7 @@
                                 <h1 style="font-size: 26px">
                                     {{ $flat->title }} | {{ $flat->itemKind->name }} | {{ $flat->itemType->name }} | {{--Nehnuteľnosť Rodinný dom Predaj Dunajská Streda--}}
                                 </h1>
+
                                 <p>
                                     Predaj: exkluzívny rodinný dom, kompletne zariadený, bazén so slanou vodou,priamo v Dunajskej Strede
                                 </p>
@@ -107,6 +112,11 @@
                                     </div>
 
                                 </div>
+
+                                <!-- Trigger the modal with a button -->
+                                <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+
+
                                 <div class="row">
                                     <div class="col-md-6">
                                         <img style="width: 100%" src="http://www.archello.com/sites/default/files/imagecache/header_detail_large/architecturalvisualizationluxuryhouse2.jpg">
@@ -209,6 +219,35 @@
     </div>
     </div>
     </main>
+
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- datepicker start -->
+                    <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control">
+                        <div class="input-group-addon">
+                            <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                    <!-- datepicker end -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 @endsection
 
 
