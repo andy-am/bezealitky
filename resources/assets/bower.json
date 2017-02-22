@@ -26,6 +26,7 @@
     "placeholders": "^4.0.1",
     "semantic-ui-checkbox": "^2.2.7",
     "bootstrap-touchspin": "^3.1.2",
-    "eonasdan-bootstrap-datetimepicker": "^4.17.45"
+    "eonasdan-bootstrap-datetimepicker": "^4.17.45",
+    "mustache.js": "mustache#^2.3.0"
   }
 }

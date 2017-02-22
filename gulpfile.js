@@ -13,28 +13,44 @@ const elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix.scripts([
-        '../bower_components/jquery/dist/jquery.min.js',
-        '../bower_components/bootstrap/dist/js/bootstrap.min.js',
-        '../bower_components/select2/dist/js/select2.full.min.js',
-        '../bower_components/semantic-ui-checkbox/checkbox.min.js',
-        '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
-        '../bower_components/moment/min/moment.min.js',
-        '../bower_components/moment/locale/sk.js',
-        '../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+        /**
+         * BOWER COMPONENTS SCRIPTS
+         */
+            '../bower_components/jquery/dist/jquery.min.js',
+            '../bower_components/bootstrap/dist/js/bootstrap.min.js',
+            '../bower_components/mustache.js/mustache.min.js',
+            '../bower_components/select2/dist/js/select2.full.min.js',
+            '../bower_components/semantic-ui-checkbox/checkbox.min.js',
+            '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js',
+            '../bower_components/moment/min/moment.min.js',
+            '../bower_components/moment/locale/sk.js',
+            '../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 
+        /**
+         * CUSTOM SCRIPTS
+         */
             'app.init.js',
             'app.global.js',
+            'app.mustache.js',
             'app.form.js',
             'app.notification.js'
 
     ]);
 
     mix.sass([
-        '../bower_components/select2/dist/css/select2.min.css',
-        '../bower_components/semantic-ui-checkbox/checkbox.min.css',
-        '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
-        '../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-        'app.scss',
+        /**
+         * BOWER COMPONENTS STYLESHEETS
+         */
+            '../bower_components/select2/dist/css/select2.min.css',
+            '../bower_components/semantic-ui-checkbox/checkbox.min.css',
+            '../bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css',
+            '../bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+
+        /**
+         * CUSTOM STYLESHEETS
+         */
+            'app.scss',
+
     ], 'public/assets/css');
 
 });

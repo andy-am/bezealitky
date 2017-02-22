@@ -7,6 +7,14 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
+                <li>
+                    @verbatim
+                        <div id="target">Loading...</div>
+                        <script id="template" type="x-tmpl-mustache">
+                            Hello! {{ name }}
+                        </script>
+                    @endverbatim
+                </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Flats<strong class="caret"></strong></a>
                     <ul class="dropdown-menu">
