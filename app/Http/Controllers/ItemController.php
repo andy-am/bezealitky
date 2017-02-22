@@ -28,9 +28,7 @@ class ItemController extends Controller
     public function detail($id)
     {
         
-        if(!Auth::user()){
-            dump(Auth::user()->getBrowserNotifications() );
-        }
+
         $flat = Item::find($id);
         //dump($flat);die();
 
