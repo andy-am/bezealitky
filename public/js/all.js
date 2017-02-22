@@ -1062,20 +1062,51 @@ APP.init = (function($) {
 }(jQuery));
 
 
+//https://gist.github.com/GaryJones/15bc42d47a5ab216ee77#file-main-js
+APP.global = (function( $ ) {
+
+    'use strict';
+
+    return {
+
+        settings: {},
+
+        config: {},
+
+        token : $('meta[name="csrf-token"]').attr('content'),
+
+    }
+
+})( jQuery );
 /**
  * Ajax form based on Bootstrap 3 & Laravel 5
  * 2017 by Michal Gasparik
  */
-var AXFORM = {};
 
-(function($){
+/**
+ * APP.form
+ * @type {{token}}
+ */
+APP.form = (function($){
 
-    AXFORM.token = $('meta[name="csrf-token"]').attr('content');
-    AXFORM.service  = {
+    'use strict';
+
+    var FORM;
+
+    /**
+     * FORM OBJECT
+     * @type {{token: *, _submit: Function, _validate: Function, _reset: Function, _done: Function}}
+     * @private
+     */
+    FORM = {
+
+        /**
+         * TOKEN
+         */
+        token : APP.global.token,
 
             /**
              * Submit method
-             *
              * @param e
              * @param self
              * @private
@@ -1089,7 +1120,7 @@ var AXFORM = {};
                 this.grecaptcha = self.attr('data-grecaptcha');
 
                 // form serialized data
-                var data = AXFORM.token ? self.serialize() + '&_token=' + AXFORM.token : self.serialize();
+                var data = FORM.token ? self.serialize() + '&_token=' + FORM.token : self.serialize();
 
                 console.log(data);
 
@@ -1104,14 +1135,14 @@ var AXFORM = {};
                 $.ajax(options).done(function (response) {
 
                     console.log('done');
-                    console.log(response);
-                    AXFORM.service._validate(self, response)
+                    console.log("response = " + response);
+                    FORM._validate(self, response)
 
                 }).fail(function (response) {
 
                     console.log('fail');
                     console.log(response);
-                    AXFORM.service._validate(self, response)
+                    FORM._validate(self, response)
 
                 });
 
@@ -1126,6 +1157,9 @@ var AXFORM = {};
              */
 
             _validate: function (self, response) {
+
+                console.log(self);
+                console.log("response " + response);
 
                 var status = response.status;
                 var $group = $('.form-group');
@@ -1157,8 +1191,8 @@ var AXFORM = {};
 
                 } else if(status == 200){
 
-                    AXFORM.service._reset(self);
-                    AXFORM.service._done(self);
+                    FORM._reset(self);
+                    FORM._done(self);
 
                 }
 
@@ -1174,6 +1208,11 @@ var AXFORM = {};
 
             },
 
+            /**
+             * FORM._done()
+             * @param self
+             * @private
+             */
             _done: function(self){
                 var done = self.attr('data-done');
 
@@ -1187,17 +1226,50 @@ var AXFORM = {};
                     }
                 }
 
+            },
+
+            onReady: function () {
+
+                $(document).on('submit', 'form.ajax', function (e){
+                    FORM._submit(e, $(this));
+                });
+
             }
+
         };
 
-        /**
-         * Bind on form submit
-         */
-
-        $(document).on('submit', 'form.ajax', function (e){
-            AXFORM.service._submit(e, $(this));
-        });
-
+        return {
+            token: FORM.token,
+            onReady: FORM.onReady
+        }
 
 })(jQuery);
+
+jQuery(APP.form.onReady);
+//https://gist.github.com/GaryJones/15bc42d47a5ab216ee77#file-main-js
+APP.notification = (function( $ ) {
+
+    'use strict';
+
+    var NOTIFICATION;
+
+    NOTIFICATION = {
+
+        onReady: function(){
+            console.log('ready');
+        },
+
+        settings: {
+
+        }
+
+    }
+
+    return{
+        onReady: NOTIFICATION.onReady()
+    }
+
+})( jQuery );
+
+jQuery(APP.notification.onReady);
 //# sourceMappingURL=all.js.map

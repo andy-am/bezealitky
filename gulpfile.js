@@ -23,7 +23,9 @@ elixir(function(mix) {
         '../bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 
             'app.init.js',
-            'form.js',
+            'app.global.js',
+            'app.form.js',
+            'app.notification.js'
 
     ]);
 
